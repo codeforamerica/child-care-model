@@ -23,8 +23,8 @@ spring:
       cache:
         period: 0
   datasource:
-    url: jdbc:postgresql://localhost:5432/starter-app
-    username: starter-app
+    url: jdbc:postgresql://localhost:5432/child-care-model-illinois
+    username: child-care-model-illinois
     password:
   servlet:
     multipart:
