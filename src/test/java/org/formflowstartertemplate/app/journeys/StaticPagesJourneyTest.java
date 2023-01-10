@@ -16,7 +16,7 @@ public class StaticPagesJourneyTest extends JourneyTest {
   @Test
   void staticPagesJourney() {
     // Landing screen
-    assertThat(testPage.getTitle()).isEqualTo("Get child care assistance.");
+    assertThat(testPage.getTitle()).isEqualTo("Get child care assistance");
     assertThat(driver.getWindowHandles().size()).isEqualTo(1);
     String originalWindow = driver.getWindowHandle();
     // Go to FAQ tab
