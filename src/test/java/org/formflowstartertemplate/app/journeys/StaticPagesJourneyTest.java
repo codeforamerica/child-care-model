@@ -16,7 +16,7 @@ public class StaticPagesJourneyTest extends JourneyTest {
   @Test
   void staticPagesJourney() {
     // Landing screen
-    assertThat(testPage.getTitle()).isEqualTo("Apply for UBI payments easily online.");
+    assertThat(testPage.getTitle()).isEqualTo("Get child care assistance.");
     assertThat(driver.getWindowHandles().size()).isEqualTo(1);
     String originalWindow = driver.getWindowHandle();
     // Go to FAQ tab
