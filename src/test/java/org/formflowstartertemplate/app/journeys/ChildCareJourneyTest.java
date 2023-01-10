@@ -12,7 +12,7 @@ public class ChildCareJourneyTest extends JourneyTest {
   @Test
   void fullUbiFlow() {
     // Landing screen
-    assertThat(testPage.getTitle()).isEqualTo("Get child care assistance..");
+    assertThat(testPage.getTitle()).isEqualTo("Get child care assistance");
     testPage.clickButton("Apply For Child Care Benefits");
     // How this works
 //    testPage.clickContinue();
