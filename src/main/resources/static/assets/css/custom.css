@@ -1,5 +1,40 @@
 /* This file is provided for addition of custom CSS styles */
 
+body {
+  background: #fff;
+  color: #000c;
+}
+
+.content-card {
+  padding: 1.8rem;
+}
+
+.content-card--teal {
+  background-color: #e8f6f9;
+}
+
+.content-card--grey {
+  background-color: #e0dfda;
+}
+
+a, .button--link {
+  color: #005ea2;
+}
+
+.button--primary {
+  background-color: #005ea2;
+  box-shadow: none;
+  border: none;
+}
+
+a:hover, .button--link:hover {
+  color: #1a4480;
+}
+
+a:visited, .button--link:visited {
+  color: #54278f;
+}
+
 .reveal a {
   display: flex;
 }
@@ -9,3 +44,10 @@
   display: flex;
   margin-right: 10px;
 }
+
+/*.list--bulleted ul {*/
+/*  !*display: inline-block;*!*/
+/*  margin: 0 auto;*/
+/*  text-align: center;*/
+
+/*}*/

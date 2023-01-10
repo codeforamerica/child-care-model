@@ -3,46 +3,131 @@
 <head th:replace="fragments/head :: head(title=#{index.title})"></head>
 <body>
 <div class="page-wrapper">
-  <div th:replace="fragments/toolbar :: toolbar"></div>
-  <section class="slab">
-    <div class="grid">
-      <div th:replace="fragments/goBack :: goBackLink"></div>
-      <main id="content" role="main" class="form-card spacing-above-35">
-              <div class="form-card__content">
-                <p th:text="#{index.intro}"></p>
+  <th:block th:replace="fragments/toolbar :: toolbar" />
+  <main id="content" role="main" class="spacing-above-15" style="max-width: 66ex;">
+    <div class="form-card__content">
+      <h1 th:text="#{index.title}"></h1>
+      <p th:text="#{index.intro}"></p>
 
-                <h2 class="h3" th:text="#{index.qualify-title}"></h2>
-                <ul class="list--bulleted padding-left-25">
-                  <li th:text="#{index.qualification.li1}"></li>
-                  <li th:text="#{index.qualification.li2}"></li>
-                  <li th:text="#{index.qualification.li3}"></li>
-                </ul>
+      <h2 class="h3" th:text="#{index.qualify-title}"></h2>
+      <ol class="list--numbered">
+        <li th:text="#{index.qualification.li1}"></li>
+        <li th:text="#{index.qualification.li2}"></li>
+        <li th:text="#{index.qualification.li3}"></li>
+      </ol>
 
-                <p th:text="#{index.requirements-exception}"></p>
-                <a href="requirements" target="_blank"> View all requirements </a>
+      <p th:utext="#{index.requirements-exception}"></p>
+      <a href="requirements" target="_blank"> View all requirements </a>
 
-                <h2 class="h3" th:text="#{index.gather-info.title}"></h2>
+      <h2 class="h3" th:text="#{index.gather-info.title}"></h2>
 
-                <div class="card" style="background-color: #e8f6f9">
-                  <p th:text="#{index.to-apply}"></p>
-                  <ul class="list--bulleted padding-left-25">
-                    <li th:text="#{index.to-apply.li1}"></li>
-                    <li th:text="#{index.to-apply.li2}"></li>
-                  </ul>
+      <div class="content-card content-card--teal">
+        <div class="card-body">
+          <p th:text="#{index.to-apply}"></p>
+          <ul class="list--bulleted">
+            <li th:utext="#{index.to-apply.li1}"></li>
+            <li th:utext="#{index.to-apply.li2}"></li>
+          </ul>
+        </div>
 
-                </div>
-                <div class="spacing-above-35">
-                  <a href="/childcare/basicInfo" th:text="#{index.apply-now}"
-                     class="button--primary button"></a>
-                </div>
+      </div>
+      <hr>
+
+      <h2 class="h3" th:text="#{index.apply-header}"></h2>
+      <p th:text="#{index.apply-description}"></p>
+      <div class="spacing-above-35">
+        <a href="/childcare/basicInfo" th:text="#{index.apply-button}"
+           class="button--primary button"></a>
+      </div>
+      <hr>
+
+      <h2 class="h3" th:text="#{index.how-long-header}"></h2>
+      <p th:text="#{index.how-long-description}"></p>
+
+      <div class="content-card content-card--grey">
+        <div class="card-body">
+          <h2 class="h3" th:text="#{index.time-estimate}"></h2>
+          <p th:utext="#{index.time-estimate-description}"></p>
+        </div>
+      </div>
+
+      <hr>
+      <p th:text="#{index.not-ready}"></p>
+      <ul class="list--bulleted">
+        <a href="#">
+          <li th:text="#{index.benefit-programs.li1}"></li>
+        </a>
+        <a href="#">
+          <li th:text="#{index.benefit-programs.li2}"></li>
+        </a>
+        <a href="#">
+          <li th:text="#{index.benefit-programs.li3}"></li>
+        </a>
+        <a href="#">
+          <li th:text="#{index.benefit-programs.li4}"></li>
+        </a>
+        <a href="#">
+          <li th:text="#{index.benefit-programs.li5}"></li>
+        </a>
+      </ul>
+
+      <br>
+      <p th:text="#{index.more-about}"></p>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion1}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion2}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion3}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion4}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion5}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion6}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion7}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion8}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion9}"></button>
+      </div>
+
+      <div class="accordion">
+        <button href="#" class="accordion__button" aria-expanded="true" aria-controls="a1"
+                th:text="#{index.accordion10}"></button>
+      </div>
 
 
-
-              </div>
-      </main>
     </div>
-  </section>
+  </main>
 </div>
-<th:block th:replace="fragments/footer :: footer" />
+<th:block th:replace="fragments/footer :: footer"/>
 </body>
 </html>
