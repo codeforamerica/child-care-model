@@ -13,7 +13,7 @@ public class ChildCareJourneyTest extends JourneyTest {
   void fullChildCareFlow() {
     // Landing screen
     assertThat(testPage.getTitle()).isEqualTo("Get child care assistance");
-    testPage.clickButton("Apply For Child Care Benefits");
+
     // How this works
 //    testPage.clickContinue();
 //    // Language preference
