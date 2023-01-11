@@ -21,12 +21,19 @@ public class ChildCareJourneyTest extends JourneyTest {
 //    // Getting to know you
 //    testPage.clickContinue();
 //    // Personal info
-//    testPage.enter("firstName", "Testy");
-//    testPage.enter("lastName", "McTesterson");
-//    testPage.enter("birthDay", "01");
-//    testPage.enter("birthMonth", "01");
-//    testPage.enter("birthYear", "2000");
-//    testPage.clickContinue();
+    testPage.enter("firstName", "Testy");
+    testPage.enter("lastName", "McTesterson");
+    testPage.enter("dateofBirthDay", "01");
+    // TODO: figure out how to fill radio button option
+//    testPage.enter("firstTimeApplying", "Yes");
+
+    testPage.enter("dateofBirthMonth", "01 - January");
+    testPage.enter("dateofBirthYear", "2000");
+    testPage.clickButton("Next");
+
+//    testPage.goBack();
+//    assertThat(testPage.getCssSelectorText(".form-card__content")).contains("Testy");
+
 //    // Home address
 //    testPage.enter("streetAddress", "1111 N State St");
 //    testPage.enter("city", "Roswell");
