@@ -44,6 +44,9 @@ public class StaticPageController {
   @GetMapping("/faq")
   String getFaq() { return "faq"; }
 
+  @GetMapping("/requirements")
+  String getRequirements() { return "requirements"; }
+
   @GetMapping("/privacy")
   String getPrivacy() { return "privacy"; }
 }
