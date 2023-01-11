@@ -8,27 +8,49 @@
     <main id="content" role="main" class="spacing-above-15" style="max-width: 66ex;">
         <div class="form-card__content">
             <h1 th:text="#{basic-info.header}"></h1>
-            <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::})">
-              <th:block th:ref="">
+            <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::formContent})">
+              <th:block th:ref="formContent">
                 <div class="form-card__content">
                   <th:block th:replace="'fragments/inputs/radioFieldset' ::
                                 radioFieldset(inputName='firstTimeApplying',
-                                label=#{},
-                                helpText=#{},
-                                content=~{::})">
-                                <th:block th:ref="">
-                                  <!-- Copy the below input if you want to add more -->
-                                  <th:block
-                                      th:replace="'fragments/inputs/radio' :: radio(inputName='firstTimeApplying',value='', label=#{})"/>
-                                </th:block>
-                              </th:block>
+                                label=#{basic-info.apply-radio-label},
+                                fieldsetHelpText=#{basic-info.apply-radio-label},
+                                content=~{::firstTimeApplyingOptions})">
+                    <th:block th:ref="firstTimeApplyingOptions">
+                      <th:block
+                          th:replace="'fragments/inputs/radio' :: radio(inputName='firstTimeApplying',value='Yes', label=#{basic-info.apply-option-yes})"/>
+                      <th:block
+                          th:replace="'fragments/inputs/radio' :: radio(inputName='firstTimeApplying',value='No', label=#{basic-info.apply-option-no})"/>
+                    </th:block>
+                  </th:block>
+
+                  <th:block th:replace="'fragments/inputs/text' ::
+                    text(inputName='firstName',
+                    label=#{basic-info.first-name-label})"
+                  th:utext="#{basic-info.first-name-label}"/>
+
+                  <th:block th:replace="'fragments/inputs/text' ::
+                    text(inputName='middleName',
+                    label=#{basic-info.middle-name-label})"
+                            th:utext="#{basic-info.middle-name-label}"/>
+
+                  <th:block th:replace="'fragments/inputs/text' ::
+                    text(inputName='lastName',
+                    label=#{basic-info.last-name-label})" />
+
+                  <th:block th:replace="'fragments/inputs/date' ::
+                    date(inputName='dateofBirth',
+                    label=#{basic-info.date-of-birth-label})"/>
                 </div>
                 <div class="form-card__footer">
+                  <th:block th:replace="fragments/inputs/submitButton :: submitButton(
+                    text=#{basic-info.next-button-text})" />
 
                 </div>
               </th:block>
-             </th:block>m
+             </th:block>
         </div>
+      
     </main>
 </div>
 <th:block th:replace="fragments/footer :: footer"/>
