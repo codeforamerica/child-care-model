@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 public class ChildCareJourneyTest extends JourneyTest {
 
   @Test
-  void fullUbiFlow() {
+  void fullChildCareFlow() {
     // Landing screen
     assertThat(testPage.getTitle()).isEqualTo("Get child care assistance");
     testPage.clickButton("Apply For Child Care Benefits");
