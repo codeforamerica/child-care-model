@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title=#{basic-info.title})"></head>
 <body>
+<div class="page-wrapper">
+    <th:block th:replace="fragments/toolbar :: toolbar" />
+    <main id="content" role="main" class="spacing-above-15" style="max-width: 66ex;">
+        <div class="form-card__content">
+            <h1 th:text="#{basic-info.header}"></h1>
+            <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::})">
+              <th:block th:ref="">
+                <div class="form-card__content">
+                  <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                                radioFieldset(inputName='firstTimeApplying',
+                                label=#{},
+                                helpText=#{},
+                                content=~{::})">
+                                <th:block th:ref="">
+                                  <!-- Copy the below input if you want to add more -->
+                                  <th:block
+                                      th:replace="'fragments/inputs/radio' :: radio(inputName='firstTimeApplying',value='', label=#{})"/>
+                                </th:block>
+                              </th:block>
+                </div>
+                <div class="form-card__footer">
 
+                </div>
+              </th:block>
+             </th:block>m
+        </div>
+    </main>
+</div>
+<th:block th:replace="fragments/footer :: footer"/>
 </body>
 </html>
