@@ -7,6 +7,7 @@
     <th:block th:replace="fragments/toolbar :: toolbar" />
     <main id="content" role="main" class="spacing-above-15" style="max-width: 66ex;">
         <div class="form-card__content">
+            <p th:utext="#{basic-info.step}"></p>
             <h1 th:text="#{basic-info.header}"></h1>
             <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::formContent})">
               <th:block th:ref="formContent">
@@ -14,7 +15,7 @@
                   <th:block th:replace="'fragments/inputs/radioFieldset' ::
                                 radioFieldset(inputName='firstTimeApplying',
                                 label=#{basic-info.apply-radio-label},
-                                fieldsetHelpText=#{basic-info.apply-radio-label},
+                                fieldsetHelpText=#{basic-info.apply-question},
                                 content=~{::firstTimeApplyingOptions})">
                     <th:block th:ref="firstTimeApplyingOptions">
                       <th:block

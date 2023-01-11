@@ -45,19 +45,19 @@
                 aria-describedby=${inputName + '-month-label'},
                 aria-labelledby=${hasAriaLabel ? ariaLabel : ''},
                 aria-invalid=${hasErrorMonth}">
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='', optionText=#{general.date.placeholder}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='01', optionText=#{general.date.january}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='02', optionText=#{general.date.february}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='03', optionText=#{general.date.march}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='04', optionText=#{general.date.april}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='05', optionText=#{general.date.may}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='06', optionText=#{general.date.june}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='07', optionText=#{general.date.july}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='08', optionText=#{general.date.august}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='09', optionText=#{general.date.september}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='10', optionText=#{general.date.october}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='11', optionText=#{general.date.november}, inputName=${inputName + '-month-label'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='12', optionText=#{general.date.december}, inputName=${inputName + '-month-label'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='', optionText=#{general.date.placeholder}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='01', optionText=#{general.date.january}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='02', optionText=#{general.date.february}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='03', optionText=#{general.date.march}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='04', optionText=#{general.date.april}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='05', optionText=#{general.date.may}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='06', optionText=#{general.date.june}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='07', optionText=#{general.date.july}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='08', optionText=#{general.date.august}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='09', optionText=#{general.date.september}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='10', optionText=#{general.date.october}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='11', optionText=#{general.date.november}, inputName=${inputName + 'Month'})"/>
+          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='12', optionText=#{general.date.december}, inputName=${inputName + 'Month'})"/>
         </select>
       </div>
 <!--      <input type="text" inputmode="numeric" maxlength="2"-->
