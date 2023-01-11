@@ -14,7 +14,7 @@ body {
 }
 
 .content-card--grey {
-  background-color: #e0dfda;
+  background-color: #f0f0f0;
 }
 
 a, .button--link {
@@ -43,6 +43,12 @@ a:visited, .button--link:visited {
   align-self: center;
   display: flex;
   margin-right: 10px;
+}
+
+.accordion {
+  border: none;
+  border-radius: 0em;
+  background-color: #f0f0f0;
 }
 
 /*.list--bulleted ul {*/
