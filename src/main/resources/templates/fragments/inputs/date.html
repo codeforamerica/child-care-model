@@ -60,15 +60,6 @@
           <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='12', optionText=#{general.date.december}, inputName=${inputName + 'Month'})"/>
         </select>
       </div>
-<!--      <input type="text" inputmode="numeric" maxlength="2"-->
-<!--             class="text-input text-input&#45;&#45;inline form-width&#45;&#45;month"-->
-<!--             th:id="${inputName}+'-month'"-->
-<!--             th:name="${inputName}+'Month'"-->
-<!--             th:placeholder="mm"-->
-<!--             th:attr="-->
-
-<!--              aria-invalid=${hasErrorMonth}"-->
-<!--             th:value="${inputData.getOrDefault(inputName + 'Month', '')}"/>-->
       /
       <input type="text" inputmode="numeric" maxlength="2"
              class="text-input text-input--inline form-width--day"
