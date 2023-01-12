@@ -10,15 +10,25 @@ flow:
     nextScreens:
       - name: addChild
         condition: org.formflowstartertemplate.app.submission.conditions.HasChildren
-      - name: protectiveServices
+      - name: null
 
   addChild:
     subflow: children
+    nextScreens:
+      - name: reviewChildren
+
+  reviewChildren:
     nextScreens:
       - name: protectiveServices
 
   protectiveServices:
     nextScreens: null
+subflows:
+  children:
+    entryScreen: childInfo
+    iterationStartScreen: addChild
+    reviewScreen: reviewChildren
+    deleteConfirmationScreen: childDeleteConfirmation
 ---
 name: ubi
 conditionsPath: org.formflowstartertemplate.app.submission.conditions
@@ -109,11 +119,6 @@ subflows:
     iterationStartScreen: housemateInfo
     reviewScreen: householdList
     deleteConfirmationScreen: householdDeleteConfirmation
-  children:
-    entryScreen: childInfo
-    iterationStartScreen: addChild
-    reviewScreen: reviewChildren
-    deleteConfirmationScreen: null
   income:
     entryScreen: income
     iterationStartScreen: householdMemberIncome
