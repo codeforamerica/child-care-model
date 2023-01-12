@@ -20,6 +20,8 @@ public class Childcare {
 
     private String middleName;
 
+    private String hasChildren;
+
     @NotBlank()
     private String dateofBirthDay;
 

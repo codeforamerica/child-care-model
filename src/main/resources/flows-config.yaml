@@ -7,6 +7,15 @@ flow:
       - name: childInfo
 
   childInfo:
+    nextScreens:
+      - name: addChild
+        condition: org.formflowstartertemplate.app.submission.conditions.HasChildren
+      - name: protectiveServices
+
+  addChild:
+    nextScreens: null
+
+  protectiveServices:
     nextScreens: null
 ---
 name: ubi

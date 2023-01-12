@@ -5,6 +5,48 @@ body {
   color: #000c;
 }
 
+.button {
+  display: block;
+  margin-left: 0;
+}
+
+.button--add-child {
+  background-color: #005ea2;
+  color: white;
+  border: none;
+  box-shadow: none;
+}
+
+.button--add-child:hover {
+  color: #fff;
+  background-color: #1a4480;
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+.button--add-child:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.button--no-children {
+  border-color: #005ea2;
+  color: #005ea2;
+  box-shadow: none;
+}
+
+.button--no-children:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.button--no-children:hover {
+  color: #fff;
+  background-color: #1a4480;
+  border-bottom: 0;
+  text-decoration: none;
+}
+
 .content-card {
   padding: 1.8rem;
 }
@@ -35,6 +77,12 @@ a:visited, .button--link:visited {
   color: #54278f;
 }
 
+.form-width-without-card {
+  max-width: 55rem;
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .reveal a {
   display: flex;
 }
@@ -50,9 +98,4 @@ a:visited, .button--link:visited {
   border-radius: 0em;
   background-color: #f0f0f0;
 }
-/*.list--bulleted ul {*/
-/*  !*display: inline-block;*!*/
-/*  margin: 0 auto;*/
-/*  text-align: center;*/
 
-/*}*/
