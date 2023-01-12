@@ -13,7 +13,9 @@ flow:
       - name: protectiveServices
 
   addChild:
-    nextScreens: null
+    subflow: children
+    nextScreens:
+      - name: protectiveServices
 
   protectiveServices:
     nextScreens: null
@@ -107,6 +109,11 @@ subflows:
     iterationStartScreen: housemateInfo
     reviewScreen: householdList
     deleteConfirmationScreen: householdDeleteConfirmation
+  children:
+    entryScreen: childInfo
+    iterationStartScreen: addChild
+    reviewScreen: reviewChildren
+    deleteConfirmationScreen: null
   income:
     entryScreen: income
     iterationStartScreen: householdMemberIncome
