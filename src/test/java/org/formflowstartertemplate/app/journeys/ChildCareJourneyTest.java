@@ -3,6 +3,7 @@ package org.formflowstartertemplate.app.journeys;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.formflowstartertemplate.app.utils.YesNoAnswer.NO;
 import static org.formflowstartertemplate.app.utils.YesNoAnswer.YES;
+import org.openqa.selenium.WebElement;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -21,12 +22,23 @@ public class ChildCareJourneyTest extends JourneyTest {
 //    // Getting to know you
 //    testPage.clickContinue();
 //    // Personal info
-//    testPage.enter("firstName", "Testy");
-//    testPage.enter("lastName", "McTesterson");
-//    testPage.enter("birthDay", "01");
-//    testPage.enter("birthMonth", "01");
-//    testPage.enter("birthYear", "2000");
-//    testPage.clickContinue();
+    testPage.enter("firstName", "Testy");
+    testPage.enter("lastName", "McTesterson");
+    testPage.enter("dateofBirthDay", "01");
+    WebElement radio = driver.findElement(By.id("firstTimeApplying-Yes-label"));
+    radio.click();
+
+    testPage.enter("dateofBirthMonth", "01 - January");
+    testPage.enter("dateofBirthYear", "2000");
+    testPage.clickButton("Next");
+
+    testPage.goBack();
+
+    assertThat(testPage.getCssSelectorText(".form-card__content")).contains("What is your first name?");
+//    assertThat(testPage.getInputValue("firstName")).isEqualTo("Testy");
+
+//    assertThat(testPage.getSelectValue("firstName")).contains("Testy");
+
 //    // Home address
 //    testPage.enter("streetAddress", "1111 N State St");
 //    testPage.enter("city", "Roswell");

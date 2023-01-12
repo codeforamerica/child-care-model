@@ -3,8 +3,11 @@ conditionsPath: org.formflowstartertemplate.app.submission.conditions
 actionsPath: org.formflowstartertemplate.app.submission.actions
 flow:
   basicInfo:
-    nextScreens: null
+    nextScreens:
+      - name: childInfo
 
+  childInfo:
+    nextScreens: null
 ---
 name: ubi
 conditionsPath: org.formflowstartertemplate.app.submission.conditions

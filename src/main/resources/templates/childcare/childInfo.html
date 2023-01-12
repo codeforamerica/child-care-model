@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title='child info page')"></head>
+<body>
+<div class="page-wrapper">
+  <div th:replace="fragments/toolbar :: toolbar"></div>
+  <section class="slab">
+    <div class="grid">
+      <div th:replace="fragments/goBack :: goBackLink"></div>
+      <main id="content" role="main" class="form-card spacing-above-35">
+        <th:block
+            th:replace="'fragments/cardHeader' :: cardHeader(header='header')"/>
+          <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::empty-contents})">
+            <th:block th:ref="empty-contents">
+              <div class="form-card__content">
+                Hello, world!
+              </div>
+            <div class="form-card__footer">
+              
+            </div>
+          </th:block>
+        </th:block>
+      </main>
+    </div>
+  </section>
+</div>
+<th:block th:replace="fragments/footer :: footer" />
+</body>
+</html>
