@@ -19,9 +19,16 @@ flow:
 
   reviewChildren:
     nextScreens:
+      - name: otherChildrenNoCare
+
+  otherChildrenNoCare:
+    nextScreens:
       - name: protectiveServices
 
   protectiveServices:
+    nextScreens: null
+
+  childDeleteConfirmation:
     nextScreens: null
 subflows:
   children:

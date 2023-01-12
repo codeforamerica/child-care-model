@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Protective services</title>
-</head>
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title=#{protective-services.title})"></head>
 <body>
+<div class="page-wrapper">
+  <div th:replace="fragments/toolbar :: toolbar"></div>
+  <div th:replace="fragments/goBack :: goBackLink"></div>
+  <main id="content" role="main" class="spacing-above-15">
+    <p th:utext="#{protective-services.step}"></p>
+    <h1 th:text="#{protective-services.header}"></h1>
+    <p th:text="#{protective-services.description}"></p>
+    <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::empty-contents})">
+      <th:block th:ref="empty-contents">
+        <div class="form-card__content">
+          <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                        radioFieldset(inputName='receiveCashAssistance',
+                        label=#{protective-services.cash-question},
+                        content=~{::cashAssistanceOptions})">
+            <th:block th:ref="cashAssistanceOptions">
+              <!-- Copy the below input if you want to add more -->
+              <th:block
+                  th:replace="'fragments/inputs/radio' :: radio(inputName='childrenNotNeedingCare',value='Yes', label=#{general.option-yes})"/>
+              <th:block
+                  th:replace="'fragments/inputs/radio' :: radio(inputName='childrenNotNeedingCare',value='No', label=#{general.option-no})"/>
+            </th:block>
+          </th:block>
+          <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                        radioFieldset(inputName='currentLivingSituation',
+                        label=#{protective-services.living-question},
+                        content=~{::livingQuestionOptions})">
+                        <th:block th:ref="livingQuestionOptions">
+                          <!-- Copy the below input if you want to add more -->
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='currentLivingSituation',value=#{protective-services.living-question.o1}, label=#{protective-services.living-question.o1})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='currentLivingSituation',value=#{protective-services.living-question.o2}, label=#{protective-services.living-question.o2})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='currentLivingSituation',value=#{protective-services.living-question.o3}, label=#{protective-services.living-question.o3})"/>
 
+                        </th:block>
+                      </th:block>
+
+        </div>
+        <div class="form-card__footer">
+          <th:block th:replace="fragments/inputs/submitButton :: submitButton(
+                    text=#{basic-info.next-button-text})" />
+
+        </div>
+      </th:block>
+    </th:block>
+  </main>
+</div>
+<th:block th:replace="fragments/footer :: footer" />
 </body>
 </html>

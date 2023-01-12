@@ -40,6 +40,12 @@ body {
   outline-offset: 0;
 }
 
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
 .button--no-children:hover {
   color: #fff;
   background-color: #1a4480;

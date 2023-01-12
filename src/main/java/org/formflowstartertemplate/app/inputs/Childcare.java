@@ -56,4 +56,10 @@ public class Childcare {
     @NotBlank()
     private String childHasDisability;
 
+    @NotBlank()
+    private String numChildrenNotNeedingCare;
+
+    @NotBlank()
+    private String childrenNotNeedingCare;
+
 }

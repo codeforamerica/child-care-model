@@ -12,7 +12,6 @@
         errorMessages.get(inputName) != null &&
         (#arrays.length(errorMessages.get(inputName)) > 0) }"
     th:assert="
-      ${!#strings.isEmpty(inputName)},
       ${hasLabel || hasAriaLabel},
       ${content != null}">
   <div th:class="'form-group' + ${(hasError ? ' form-group--error' : '')}">
