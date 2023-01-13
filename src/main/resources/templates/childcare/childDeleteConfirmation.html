@@ -24,7 +24,6 @@
         name=${entryToDelete.childFirstName + ' ' + entryToDelete.childLastName}"
             id="content" role="main" class="spacing-above-35">
           <div class="form-card__content">
-<!--            <th:block th:replace="'fragments/icons' :: 'deleteDocument'"></th:block>-->
             <h1 class="h2"
                 th:text="#{child-delete-confirmation.header(${name})}"></h1>
             <h2 th:text="#{household-delete-confirmation.is-that-okay}"></h2>
