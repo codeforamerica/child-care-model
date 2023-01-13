@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title='end of workflow')"></head>
+<body>
+<div class="page-wrapper">
+  <div th:replace="fragments/toolbar :: toolbar"></div>
+  <div th:replace="fragments/goBack :: goBackLink"></div>
+  <main id="content" role="main" class="spacing-above-15">
+    <h1> End of Childcare Flow </h1>
+    <p>Please come back for more soon!</p>
+
+  </main>
+</div>
+<th:block th:replace="fragments/footer :: footer" />
+</body>
+</html>
