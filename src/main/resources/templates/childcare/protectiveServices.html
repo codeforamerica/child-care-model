@@ -19,9 +19,9 @@
             <th:block th:ref="cashAssistanceOptions">
               <!-- Copy the below input if you want to add more -->
               <th:block
-                  th:replace="'fragments/inputs/radio' :: radio(inputName='childrenNotNeedingCare',value='Yes', label=#{general.option-yes})"/>
+                  th:replace="'fragments/inputs/radio' :: radio(inputName='receiveCashAssistance',value='Yes', label=#{general.option-yes})"/>
               <th:block
-                  th:replace="'fragments/inputs/radio' :: radio(inputName='childrenNotNeedingCare',value='No', label=#{general.option-no})"/>
+                  th:replace="'fragments/inputs/radio' :: radio(inputName='receiveCashAssistance',value='No', label=#{general.option-no})"/>
             </th:block>
           </th:block>
           <th:block th:replace="'fragments/inputs/radioFieldset' ::
