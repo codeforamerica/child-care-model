@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title=#{add-child.title})"></head>
+<body>
+<div class="page-wrapper">
+  <th:block th:replace="fragments/toolbar :: toolbar" />
+  <main id="content" role="main" class="spacing-above-15" style="max-width: 66ex;">
+    <div class="form-card__content">
+      <p th:utext="#{add-child.step}"></p>
+      <h1 th:text="#{add-child.header}"></h1>
+      <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::formContent})">
+        <th:block th:ref="formContent">
+          <th:block th:replace="'fragments/inputs/text' ::
+            text(inputName='childFirstName',
+            label=#{add-child.first-name})" />
+          <th:block th:replace="'fragments/inputs/text' ::
+            text(inputName='childMiddleName',
+            label=#{add-child.middle-name})" />
+          <th:block th:replace="'fragments/inputs/text' ::
+            text(inputName='childLastName',
+            label=#{add-child.last-name})" />
+          <th:block th:replace="'fragments/inputs/date' ::
+            date(inputName='childDateofBirth',
+            label=#{add-child.date-of-birth})"/>
+          
+          <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                        radioFieldset(inputName='childRelationship',
+                        label=#{add-child.relationship},
+                        content=~{::relationships})">
+                        <th:block th:ref="relationships">
+                          <!-- Copy the below input if you want to add more -->
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='My biological child', label=#{add-child.relationship.o1})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='My adopted child', label=#{add-child.relationship.o2})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='My foster child', label=#{add-child.relationship.o3})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='My stepchild', label=#{add-child.relationship.o4})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='My ward', label=#{add-child.relationship.o5})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='My grandchild', label=#{add-child.relationship.o6})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='My sibling', label=#{add-child.relationship.o7})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='My niece or nephew', label=#{add-child.relationship.o8})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childRelationship',value='Other', label=#{add-child.relationship.o9})"/>
+                        </th:block>
+                      
+          </th:block>
+          <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                        radioFieldset(inputName='childHasDisability',
+                        label=#{add-child.disability},
+                        fieldsetHelpText=#{add-child.disability-help},
+                        content=~{::disability-options})">
+                        <th:block th:ref="disability-options">
+                          <!-- Copy the below input if you want to add more -->
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childHasDisability',value='Yes', label=#{general.option-yes})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childHasDisability',value='No', label=#{general.option-no})"/>
+                        </th:block>
+          </th:block>
+          <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                        radioFieldset(inputName='childInFosterCare',
+                        label=#{add-child.in-foster-care},
+                        fieldsetHelpText=#{add-child.in-foster-care-help},
+                        content=~{::foster-care-options})">
+                        <th:block th:ref="foster-care-options">
+                          <!-- Copy the below input if you want to add more -->
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childInFosterCare',value='Yes', label=#{general.option-yes})"/>
+                          <th:block
+                              th:replace="'fragments/inputs/radio' :: radio(inputName='childInFosterCare',value='No', label=#{general.option-no})"/>
+                        </th:block>
+                      </th:block>
+          <div class="form-card__footer">
+            <th:block th:replace="fragments/inputs/submitButton :: submitButton(
+                    text=#{basic-info.next-button-text})" />
+
+          </div>
+        </th:block>
+      </th:block>
+    </div>
+
+  </main>
+</div>
+<th:block th:replace="fragments/footer :: footer"/>
+</body>
+</html>

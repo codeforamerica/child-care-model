@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}">
-<head th:replace="fragments/head :: head(title='child info page')"></head>
+<head th:replace="fragments/head :: head(title=#{child-info.title})"></head>
 <body>
 <div class="page-wrapper">
   <div th:replace="fragments/toolbar :: toolbar"></div>
-  <section class="slab">
-    <div class="grid">
       <div th:replace="fragments/goBack :: goBackLink"></div>
-      <main id="content" role="main" class="form-card spacing-above-35">
-        <th:block
-            th:replace="'fragments/cardHeader' :: cardHeader(header='header')"/>
+      <main id="content" role="main" class="spacing-above-15">
+        <p th:utext="#{child-info.step}"></p>
+        <h1 th:text="#{child-info.header}"></h1>
+        <p th:text="#{child-info.description}"></p>
           <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::empty-contents})">
             <th:block th:ref="empty-contents">
               <div class="form-card__content">
-                Hello, world!
+                <th:block th:replace="fragments/inputs/yesOrNo :: yesOrNo(
+                  inputName='hasChildren',
+                  ariaDescribe='yes no',
+                  yesLabel=#{child-info.add-child-button-text},
+                  noLabel=#{child-info.skip-add-child-button-text})"/>
+
               </div>
             <div class="form-card__footer">
               
@@ -21,8 +25,6 @@
           </th:block>
         </th:block>
       </main>
-    </div>
-  </section>
 </div>
 <th:block th:replace="fragments/footer :: footer" />
 </body>
