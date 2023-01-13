@@ -62,4 +62,19 @@ public class Childcare {
     @NotBlank()
     private String childrenNotNeedingCare;
 
+    @NotBlank()
+    private String receiveCashAssistance;
+
+    @NotBlank()
+    private String currentLivingSituation;
+
+    @NotBlank()
+    private String experiencingDomesticViolence;
+
+    @NotBlank()
+    private String impactedByEmergency;
+
+    @NotBlank()
+    private String childrenUnderCourtSupervision;
+
 }
