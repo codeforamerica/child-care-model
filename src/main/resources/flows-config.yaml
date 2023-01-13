@@ -12,6 +12,9 @@ flow:
         condition: org.formflowstartertemplate.app.submission.conditions.HasChildren
       - name: protectiveServices
 
+  endOfWorkflow:
+    nextScreens: null
+
   addChild:
     subflow: children
     nextScreens:
@@ -26,7 +29,8 @@ flow:
       - name: protectiveServices
 
   protectiveServices:
-    nextScreens: null
+    nextScreens:
+      - name: endOfWorkflow
 
   childDeleteConfirmation:
     nextScreens: null
