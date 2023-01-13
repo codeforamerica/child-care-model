@@ -10,7 +10,7 @@ flow:
     nextScreens:
       - name: addChild
         condition: org.formflowstartertemplate.app.submission.conditions.HasChildren
-      - name: null
+      - name: protectiveServices
 
   addChild:
     subflow: children
