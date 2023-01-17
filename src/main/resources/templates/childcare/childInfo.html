@@ -4,8 +4,10 @@
 <body>
 <div class="page-wrapper">
   <div th:replace="fragments/toolbar :: toolbar"></div>
+  <section class="slab">
+    <div class="grid">
       <div th:replace="fragments/goBack :: goBackLink"></div>
-      <main id="content" role="main" class="spacing-above-15">
+      <main id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
         <p th:utext="#{child-info.step}"></p>
         <h1 th:text="#{child-info.header}"></h1>
         <p th:text="#{child-info.description}"></p>
@@ -25,6 +27,8 @@
           </th:block>
         </th:block>
       </main>
+      </div>
+  </section>
 </div>
 <th:block th:replace="fragments/footer :: footer" />
 </body>

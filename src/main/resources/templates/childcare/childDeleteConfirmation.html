@@ -22,7 +22,7 @@
         <main
             th:with="entryToDelete=${submission.getSubflowEntryByUuid('children', param.uuid)},
         name=${entryToDelete.childFirstName + ' ' + entryToDelete.childLastName}"
-            id="content" role="main" class="spacing-above-35">
+            id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
           <div class="form-card__content">
             <h1 class="h2"
                 th:text="#{child-delete-confirmation.header(${name})}"></h1>
