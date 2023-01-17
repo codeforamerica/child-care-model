@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" th:src="@{/js/actions.js}"></script>
 <body>
 <th:block
     th:fragment="radioFieldset"
@@ -17,7 +18,7 @@
   <div th:class="'form-group' + ${(hasError ? ' form-group--error' : '')}">
     <fieldset th:attr="
       aria-describedby=${hasHelpText ? inputName + '-help-text' : ''},
-      aria-labelledby=${hasAriaLabel ? ariaLabel : ''}">
+      aria-labelledby=${hasAriaLabel ? ariaLabel : ''}" th:onchange="toggleVisibility()">
       <legend class="form-question"
               th:id="${inputName + '-legend'}"
               th:inline="text">

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}">
+<script type="text/javascript" th:src="@{/assets/js/actions.js}"></script>
 <head th:replace="fragments/head :: head(title=#{children-no-care.title})"></head>
 <body>
 <div class="page-wrapper">
@@ -25,9 +26,11 @@
                               th:replace="'fragments/inputs/radio' :: radio(inputName='childrenNotNeedingCare',value='No', label=#{general.option-no})"/>
                         </th:block>
                       </th:block>
-          <th:block th:replace="'fragments/inputs/number' ::
-            number(inputName='numChildrenNotNeedingCare',
-            label=#{children-no-care.count})" />
+          <div id="children-not-needing-care" style="display: none;">
+            <th:block th:replace="'fragments/inputs/number' ::
+              number(inputName='numChildrenNotNeedingCare',
+              label=#{children-no-care.count})" />
+          </div>
 
         </div>
         <div class="form-card__footer">
