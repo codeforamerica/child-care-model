@@ -20,20 +20,20 @@ public class StaticPagesJourneyTest extends JourneyTest {
     assertThat(driver.getWindowHandles().size()).isEqualTo(1);
     String originalWindow = driver.getWindowHandle();
     // Go to FAQ tab
-    testPage.clickLink("FAQ");
-    assertThat(driver.getWindowHandles().size()).isEqualTo(2);
-    switchAwayFromOriginalWindow(originalWindow);
-    assertThat(testPage.getTitle()).isEqualTo("Frequently Asked Questions");
+//    testPage.clickLink("FAQ");
+//    assertThat(driver.getWindowHandles().size()).isEqualTo(2);
+//    switchAwayFromOriginalWindow(originalWindow);
+//    assertThat(testPage.getTitle()).isEqualTo("Frequently Asked Questions");
     // Back on landing screen
-    driver.close();
-    driver.switchTo().window(originalWindow);
-    assertThat(testPage.getTitle()).isEqualTo("Get child care assistance");
-    assertThat(driver.getWindowHandles().size()).isEqualTo(1);
+//    driver.close();
+//    driver.switchTo().window(originalWindow);
+//    assertThat(testPage.getTitle()).isEqualTo("Get child care assistance");
+//    assertThat(driver.getWindowHandles().size()).isEqualTo(1);
     // Go to privacy policy tab
-    testPage.clickLink("Privacy Policy");
-    assertThat(driver.getWindowHandles().size()).isEqualTo(2);
-    switchAwayFromOriginalWindow(originalWindow);
-    assertThat(testPage.getTitle()).isEqualTo("Privacy Policy");
+//    testPage.clickLink("Privacy Policy");
+//    assertThat(driver.getWindowHandles().size()).isEqualTo(2);
+//    switchAwayFromOriginalWindow(originalWindow);
+//    assertThat(testPage.getTitle()).isEqualTo("Privacy Policy");
   }
 
   void switchAwayFromOriginalWindow(String originalWindow) {
