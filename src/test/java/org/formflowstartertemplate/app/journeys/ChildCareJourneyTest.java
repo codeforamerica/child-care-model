@@ -35,6 +35,35 @@ public class ChildCareJourneyTest extends JourneyTest {
     testPage.goBack();
 
     assertThat(testPage.getCssSelectorText(".form-card__content")).contains("What is your first name?");
+
+    // Enter subflow
+    testPage.clickButton("Next");
+    testPage.clickButton("+ Add Child");
+
+    testPage.enter("childFirstName", "cookie");
+    testPage.enter("childLastName", "monster");
+    testPage.enter("childDateofBirthDay", "01");
+    testPage.enter("childDateofBirthMonth", "01 - January");
+    testPage.enter("childDateofBirthYear", "2020");
+    WebElement grandchildSelector = driver.findElement(By.id("childRelationship-My grandchild"));
+    grandchildSelector.click();
+
+    WebElement hasDisabilitySelector = driver.findElement(By.id("childHasDisability-Yes"));
+    hasDisabilitySelector.click();
+
+    WebElement notInFosterCareSelector = driver.findElement(By.id("childInFosterCare-No"));
+    notInFosterCareSelector.click();
+
+    testPage.clickButton("Next");
+
+    assertThat(testPage.getCssSelectorText(".content-card")).contains("cookie monster");
+
+
+
+//    <label for="childRelationship-My grandchild" id="childRelationship-My grandchild-label" class="radio-button is-selected">
+//    <input type="radio" id="childRelationship-My grandchild" value="My grandchild" name="childRelationship" aria-invalid="false" checked="checked">
+//    <span>My grandchild</span>
+//  </label>
 //    assertThat(testPage.getInputValue("firstName")).isEqualTo("Testy");
 
 //    assertThat(testPage.getSelectValue("firstName")).contains("Testy");
