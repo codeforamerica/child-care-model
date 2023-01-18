@@ -8,7 +8,11 @@
     <main id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
         <div class="form-card__content">
             <p th:utext="#{basic-info.step}"></p>
-            <h1 th:text="#{basic-info.header}"></h1>
+          <div class="spacing-below-25 usa-card__heading">
+            <h1 class="usa-card__heading">
+              <th:block th:text="#{basic-info.header}"/>
+            </h1>
+          </div>
             <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::formContent})">
               <th:block th:ref="formContent">
                 <div class="form-card__content">

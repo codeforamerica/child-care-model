@@ -58,6 +58,11 @@ ul.no-bullets {
   margin-right:20px;
 }
 
+.form-card__content {
+  font-family: Source Sans Pro Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  font-size: 2.06rem;
+}
+
 .content-card {
   padding: 1.8rem;
 }
@@ -108,5 +113,12 @@ a:visited, .button--link:visited {
   border: none;
   border-radius: 0em;
   background-color: #f0f0f0;
+}
+/* Taken from USWDS */
+.usa-card__heading {
+  font-family: Merriweather Web,Georgia,Cambria,Times New Roman,Times,serif;
+  font-size: 4.5rem;
+  line-height: 1.2;
+  margin: 0;
 }
 

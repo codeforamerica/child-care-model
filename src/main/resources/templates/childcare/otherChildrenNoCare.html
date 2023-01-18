@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}">
+<body onload="toggleVisibility()">
 <script type="text/javascript" th:src="@{/assets/js/actions.js}"></script>
 <head th:replace="fragments/head :: head(title=#{children-no-care.title})"></head>
 <body>
@@ -8,7 +9,11 @@
   <div th:replace="fragments/goBack :: goBackLink"></div>
   <main id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
     <p th:utext="#{children-no-care.step}"></p>
-    <h1 th:text="#{children-no-care.header}"></h1>
+    <div class="spacing-below-25 usa-card__heading">
+      <h1 class="usa-card__heading">
+        <th:block th:text="#{children-no-care.header}"/>
+      </h1>
+    </div>
     <p th:text="#{children-no-care.description}"></p>
     <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::empty-contents})">
       <th:block th:ref="empty-contents">

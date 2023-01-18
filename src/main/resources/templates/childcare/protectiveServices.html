@@ -7,7 +7,11 @@
   <div th:replace="fragments/goBack :: goBackLink"></div>
   <main id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
     <p th:utext="#{protective-services.step}"></p>
-    <h1 th:text="#{protective-services.header}"></h1>
+    <div class="spacing-below-25 usa-card__heading">
+      <h1 class="usa-card__heading">
+        <th:block th:text="#{protective-services.header}"/>
+      </h1>
+    </div>
     <p th:text="#{protective-services.description}"></p>
     <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::empty-contents})">
       <th:block th:ref="empty-contents">

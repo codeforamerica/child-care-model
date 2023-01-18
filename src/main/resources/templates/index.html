@@ -4,9 +4,12 @@
 <body class="template--static-page">
 <div class="page-wrapper">
   <th:block th:replace="fragments/toolbar :: toolbar" />
-  <main id="content" role="main" class="slab slab--white">
-    <div class="form-card__content">
-      <h1 class="spacing-below-35 spacing-above-5" th:text="#{index.title}"></h1>
+  <main id="content" role="main" class="slab slab--white" >
+<!--    <div class="form-card__content">-->
+    <h1 class="usa-card__heading spacing-below-35">
+      <th:block th:text="#{index.title}"/>
+    </h1>
+<!--      <h1 class="spacing-below-35 spacing-above-5" th:text="#{index.title}"></h1>-->
       <p th:text="#{index.intro}"></p>
 
       <h2 class="h3" th:text="#{index.qualify-title}"></h2>
@@ -37,7 +40,7 @@
       <p th:text="#{index.apply-description}"></p>
       <div class="spacing-above-35">
         <a href="/childcare/basicInfo" th:text="#{index.apply-button}"
-           class="button--primary button"></a>
+           class="button--primary button" style="max-width: max-content;"></a>
       </div>
       <hr>
 
@@ -158,7 +161,7 @@
       </div>
 
 
-    </div>
+<!--    </div>-->
   </main>
 </div>
 <th:block th:replace="fragments/footer :: footer"/>
