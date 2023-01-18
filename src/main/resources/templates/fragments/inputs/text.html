@@ -13,7 +13,7 @@
         (#arrays.length(errorMessages.get(inputName)) > 0) }"
     th:assert="${!#strings.isEmpty(inputName)}, ${hasLabel || hasAriaLabel}">
   <div th:class="'form-group' + ${(hasError ? ' form-group--error' : '')}">
-    <label th:if="${hasLabel}" th:for="${inputName}" th:utext="${label}" class="form-question"/>
+    <label th:for="${inputName}" th:utext="${label}" class="form-question"/>
     <p class="text--help"
        th:if="${hasHelpText}"
        th:id="${inputName + '-help-text'}"
