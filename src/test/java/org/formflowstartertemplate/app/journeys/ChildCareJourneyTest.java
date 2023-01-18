@@ -116,6 +116,10 @@ public class ChildCareJourneyTest extends JourneyTest {
 
     testPage.clickButton("Next");
 
+    testPage.clickButton("Next");
+
+
+
     assertThat(testPage.getCssSelectorText(".spacing-above-15")).contains("End of Childcare Flow");
 
   }

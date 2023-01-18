@@ -7,12 +7,16 @@
   <th:block th:replace="fragments/toolbar :: toolbar" />
   <main id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
     <div class="form-card__content">
-      <p th:utext="#{add-child.step}"></p>
+      <p th:utext="#{general.step2}"></p>
       <div class="spacing-below-25 usa-card__heading">
         <h1 class="usa-card__heading">
           <th:block th:text="#{add-child.header}"/>
         </h1>
       </div>
+
+      <p th:utext="#{general.step2}"></p>
+      <h1 th:text="#{add-child.header}"></h1>
+
       <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::formContent})">
         <th:block th:ref="formContent">
           <th:block th:replace="'fragments/inputs/text' ::

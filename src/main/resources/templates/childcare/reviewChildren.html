@@ -6,12 +6,13 @@
   <div th:replace="fragments/toolbar :: toolbar"></div>
       <div th:replace="fragments/goBack :: goBackLink"></div>
       <main id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
-        <p th:utext="#{review-children.step}"></p>
+        <p th:utext="#{general.step2}"></p>
         <div class="spacing-below-25 usa-card__heading">
           <h1 class="usa-card__heading">
             <th:block th:text="#{review-children.header}"/>
           </h1>
         </div>
+
         <p th:text="#{review-children.description}"></p>
         <div class="content-card content-card--grey">
             <ul class="subflow-list no-bullets">

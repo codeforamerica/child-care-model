@@ -30,6 +30,10 @@ flow:
 
   protectiveServices:
     nextScreens:
+      - name: workAndIncome
+
+  workAndIncome:
+    nextScreens:
       - name: endOfWorkflow
 
   childDeleteConfirmation:
