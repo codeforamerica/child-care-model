@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title=#{work-and-income.add-first-job})"></head>
+<body>
+<div class="page-wrapper">
+  <div th:replace="fragments/toolbar :: toolbar"></div>
+  <section class="slab">
+    <div class="grid">
+      <div th:replace="fragments/goBack :: goBackLink"></div>
+      <main id="content" role="main" class="form-card spacing-above-35" style="max-width: 66ex;">
+        <p th:utext="#{general.step3}"></p>
+        <div class="spacing-below-25 usa-card__heading">
+          <h1 class="usa-card__heading">
+            <th:block th:text="#{work-and-income.add-first-job}"/>
+          </h1>
+        </div>
+          <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::addJobContents})">
+            <th:block th:ref="addJobContents">
+              <div class="form-card__content">
+                <th:block th:replace="'fragments/inputs/text' ::
+                    text(inputName='employerName',
+                    label=#{work-and-income-employer-question},
+                    helpText=#{work-and-income-employer-question.help})" />
+
+                <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                                radioFieldset(inputName='freelanceJob',
+                                label=#{work-and-income.freelance-question},
+                                content=~{::freelanceOptions})">
+                  <th:block th:ref="freelanceOptions">
+                    <!-- Copy the below input if you want to add more -->
+                    <th:block
+                        th:replace="'fragments/inputs/radio' :: radio(inputName='freelanceJob',value='Yes', label=#{general.option-yes})"/>
+                    <th:block
+                        th:replace="'fragments/inputs/radio' :: radio(inputName='freelanceJob',value='No', label=#{general.option-no})"/>
+                  </th:block>
+                </th:block>
+
+                <th:block
+                    th:replace="'fragments/inputs/money' :: money(inputName='incomeLast30Days',
+                    label=#{work-and-income.money-last-30-days},
+                    helpText=#{work-and-income.money-last-30-days.help})"/>
+              </div>
+            <div class="form-card__footer">
+              <th:block th:replace="fragments/inputs/submitButton :: submitButton(
+                    text=#{basic-info.next-button-text})" />
+
+            </div>
+          </th:block>
+        </th:block>
+      </main>
+    </div>
+  </section>
+</div>
+<th:block th:replace="fragments/footer :: footer" />
+</body>
+</html>
+n

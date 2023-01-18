@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title=#{household-list.title})"></head>
+<body>
+<div class="page-wrapper">
+  <div th:replace="fragments/toolbar :: toolbar"></div>
+      <div th:replace="fragments/goBack :: goBackLink"></div>
+      <main id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
+        <p th:utext="#{general.step2}"></p>
+        <div class="spacing-below-25 usa-card__heading">
+          <h1 class="usa-card__heading">
+            <th:block th:text="#{review-jobs.header}"/>
+          </h1>
+        </div>
+
+        <p th:text="#{review-jobs.description}"></p>
+        <div class="content-card content-card--grey">
+            <ul class="subflow-list no-bullets">
+              <th:block th:if="${inputData.containsKey('jobs')}">
+                <li th:each="job, iter: ${inputData.jobs}"
+                    class="spacing-below-15">
+                              <span class="space-between">
+                                <span>
+                                  <span
+                                      th:text="${job.employerName}" style="font-weight:bold"></span>
+<!--                                  <span th:text="${child.childLastName}" style="font-weight:bold"></span>-->
+                                </span>
+                                <span class="text--small spacing-below-0">
+                                  <a th:href="'/childcare/' + ${iterationStartScreen} + '/' + ${job.uuid} + '/edit'"
+                                     th:text='Edit'
+                                     th:id="'edit-iteration-' + ${job.uuid}"
+                                     class="subflow-edit"></a>
+                                  <a th:href="'/childcare/jobs/' + ${job.uuid} + '/deleteConfirmation'"
+                                     th:text='Remove'
+                                     class="subflow-delete"
+                                     th:id="'delete-iteration-' + ${job.uuid}"></a>
+                                </span>
+                              </span>
+<!--                  <span class="space-between">-->
+<!--                      <span>-->
+<!--                        <span-->
+<!--                            th:text="${child.childDateofBirthMonth} + '/' + ${child.childDateofBirthDay} + '/' + ${child.childDateofBirthYear}" ></span>-->
+<!--                      </span>-->
+<!--                  </span>-->
+<!--                  <span class="space-between">-->
+<!--                      <span>-->
+<!--                        <span-->
+<!--                            th:text="${child.childRelationship}" ></span>-->
+<!--                      </span>-->
+<!--                  </span>-->
+
+                </li>
+              </th:block>
+            </ul>
+          </div>
+        <div class="spacing-above-35">
+        <a th:href="'/' + ${flow} + '/addChild'" class="button button--no-children"
+           th:text="#{review-jobs.add}"></a>
+        </div>
+        <div class="form-card__footer">
+          <th:block
+              th:replace="'fragments/continueButton' :: continue(text=#{review-jobs.finish})"/>
+        </div>
+      </main>
+    </div>
+<th:block th:replace="fragments/footer :: footer"/>
+</body>
+</html>

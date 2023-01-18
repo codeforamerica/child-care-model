@@ -15,13 +15,6 @@ public class ChildCareJourneyTest extends JourneyTest {
     // Landing screen
     assertThat(testPage.getTitle()).isEqualTo("Get child care assistance");
     testPage.clickButton("Apply For Child Care Benefits");
-    // How this works
-//    testPage.clickContinue();
-//    // Language preference
-//    testPage.clickContinue();
-//    // Getting to know you
-//    testPage.clickContinue();
-//    // Personal info
     testPage.enter("firstName", "Testy");
     testPage.enter("lastName", "McTesterson");
     testPage.enter("dateofBirthDay", "01");
@@ -115,6 +108,11 @@ public class ChildCareJourneyTest extends JourneyTest {
     noChildrenUnderCourtSupervision.click();
 
     testPage.clickButton("Next");
+
+    WebElement currentlyWorking = driver.findElement(By.id("currentlyWorking-Yes"));
+    currentlyWorking.click();
+
+
 
     testPage.clickButton("Next");
 

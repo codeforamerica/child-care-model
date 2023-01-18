@@ -78,4 +78,15 @@ public class Childcare {
     @NotBlank()
     private String childrenUnderCourtSupervision;
 
+    @NotBlank()
+    private String currentlyWorking;
+
+    private String searchingForEmployment;
+
+    private String freelanceJob;
+
+    private String incomeLast30Days;
+
+    private String employerName;
+
 }

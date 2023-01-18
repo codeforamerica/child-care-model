@@ -122,3 +122,8 @@ a:visited, .button--link:visited {
   margin: 0;
 }
 
+/* Taken from USWDS */
+.usa-card__heading--h2 {
+  font-size: 3.5rem;
+}
+

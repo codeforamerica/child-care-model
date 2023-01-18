@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<body onload="toggleAskJob()">
+<script type="text/javascript" th:src="@{/assets/js/actions.js}"></script>
 <html th:lang="${#locale.language}">
 <head th:replace="fragments/head :: head(title=#{work-and-income.title})"></head>
 <body>
@@ -7,25 +9,31 @@
   <section class="slab">
     <div class="grid">
       <div th:replace="fragments/goBack :: goBackLink"></div>
-      <main id="content" role="main" class="form-card spacing-above-35">
+      <main id="content" role="main" class="form-card spacing-above-35" style="max-width: 66ex;">
         <p th:utext="#{general.step3}"></p>
-<!--        <th:block-->
-<!--            th:replace="'fragments/cardHeader' :: cardHeader(header=#{}, subtext=#{})"/>-->
+        <div class="spacing-below-25 usa-card__heading">
+          <h1 class="usa-card__heading">
+            <th:block th:text="#{work-and-income.header}"/>
+          </h1>
+        </div>
           <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::workAndIncome})">
             <th:block th:ref="workAndIncome">
               <div class="form-card__content">
                 <th:block th:replace="'fragments/inputs/radioFieldset' ::
                               radioFieldset(inputName='currentlyWorking',
-                              label=#{},
-                              helpText=#{},
-                              content=~{::})">
-                              <th:block th:ref="">
+                              label='',
+                              ariaLabel='Please indicate whether you have a job',
+                              helpText=#{work-and-income.currently-working-help},
+                              content=~{::workAndIncomeOptions})">
+                              <th:block th:ref="workAndIncomeOptions">
                                 <!-- Copy the below input if you want to add more -->
                                 <th:block
-                                    th:replace="'fragments/inputs/radio' :: radio(inputName='currentlyWorking',value='', label=#{})"/>
+                                    th:replace="'fragments/inputs/radio' :: radio(inputName='currentlyWorking',value='Yes', label=#{general.option-yes})"/>
+                                <th:block
+                                    th:replace="'fragments/inputs/radio' :: radio(inputName='currentlyWorking',value='No', label=#{general.option-no})"/>
                               </th:block>
                             </th:block>
-                
+
               </div>
               <div class="form-card__footer">
                 <th:block th:replace="fragments/inputs/submitButton :: submitButton(
