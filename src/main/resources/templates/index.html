@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}">
 <head th:replace="fragments/head :: head(title=#{index.title})"></head>
-<body>
+<body class="template--static-page">
 <div class="page-wrapper">
   <th:block th:replace="fragments/toolbar :: toolbar" />
-  <main id="content" role="main" class="form-card spacing-above-15" style="max-width: 66ex;">
+  <main id="content" role="main" class="slab slab--white">
     <div class="form-card__content">
-      <h1 th:text="#{index.title}"></h1>
+      <h1 class="spacing-below-35 spacing-above-5" th:text="#{index.title}"></h1>
       <p th:text="#{index.intro}"></p>
 
       <h2 class="h3" th:text="#{index.qualify-title}"></h2>
