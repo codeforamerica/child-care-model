@@ -86,14 +86,22 @@ public class Childcare {
 
     @NotBlank()
     private String freelanceJob;
+
     @PositiveOrZero()
     private String incomeLast30Days;
 
     @NotBlank()
     private String employerName;
+
     @NotBlank()
     private String lessMoneyNextMonth;
 
     private String anythingElseAboutJob;
+
+    @NotBlank()
+    private String attestToCorrectInfo;
+
+    @NotBlank()
+    private String digitalSignature;
 
 }
