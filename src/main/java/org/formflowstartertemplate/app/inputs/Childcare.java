@@ -3,8 +3,7 @@ package org.formflowstartertemplate.app.inputs;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Min;
-
+import javax.validation.constraints.PositiveOrZero;
 @Data
 public class Childcare {
 
@@ -57,8 +56,8 @@ public class Childcare {
     @NotBlank()
     private String childHasDisability;
 
-    @NotBlank()
-    @Min(0)
+
+    @PositiveOrZero()
     private String numChildrenNotNeedingCare;
 
     @NotBlank()
