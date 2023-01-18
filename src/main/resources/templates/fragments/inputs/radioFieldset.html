@@ -8,6 +8,7 @@
       hasHelpText=${!#strings.isEmpty(fieldsetHelpText)},
       hasLabel=${!#strings.isEmpty(label)},
       hasAriaLabel=${!#strings.isEmpty(ariaLabel)},
+      useToggle=${!#strings.isEmpty(toggleVisible)},
       hasError=${
         errorMessages != null &&
         errorMessages.get(inputName) != null &&
@@ -18,7 +19,8 @@
   <div th:class="'form-group' + ${(hasError ? ' form-group--error' : '')}">
     <fieldset th:attr="
       aria-describedby=${hasHelpText ? inputName + '-help-text' : ''},
-      aria-labelledby=${hasAriaLabel ? ariaLabel : ''}" th:onchange="toggleVisibility()">
+      aria-labelledby=${hasAriaLabel ? ariaLabel : ''}"
+      th:onchange="${useToggle} ? 'toggleVisibility()' : ''">
       <legend class="form-question"
               th:id="${inputName + '-legend'}"
               th:inline="text">
