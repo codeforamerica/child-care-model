@@ -53,6 +53,11 @@ ul.no-bullets {
   text-decoration: none;
 }
 
+.date-input-label {
+  display:inline-block;
+  margin-right:20px;
+}
+
 .content-card {
   padding: 1.8rem;
 }

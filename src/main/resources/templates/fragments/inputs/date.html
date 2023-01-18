@@ -22,66 +22,77 @@
   <div
       th:class="'form-group' + ${((hasErrorMonth || hasErrorDay || hasErrorYear) ? ' form-group--error' : '')}">
     <fieldset class="input-group input-group--inline">
-      <label th:if="${hasLabel}" th:for="${inputName}" th:text="${label}" class="form-question"/>
+      <label th:for="${inputName}" th:text="${label}" class="form-question"/>
       <p class="text--help">
-        <label th:for="${inputName}+'-month'"
-               th:id="${inputName}+'-month-label'"
-               th:text="#{general.month}"></label>
-        &nbsp;/&nbsp;
-        <label th:for="${inputName}+'-day'"
-               th:id="${inputName}+'-day-label'"
-               th:text="#{general.day}"></label>
-        &nbsp;/&nbsp;
-        <label th:for="${inputName}+'-year'"
-               th:id="${inputName}+'-year-label'"
-               th:text="#{general.year}"></label>
+        <label th:for="${inputName}"
+               th:id="${inputName}+'-label-example'"
+               th:text="#{general.date.example}"></label>
       </p>
       <!-- TODO: figure out the three fields for each date issue -->
-      <div class="select">
-        <select class="select__element"
-                th:id="${inputName}+'-month'"
-                th:name="${inputName}+'Month'"
-                th:attr="
-                aria-describedby=${inputName + '-month-label'},
-                aria-labelledby=${hasAriaLabel ? ariaLabel : ''},
-                aria-invalid=${hasErrorMonth}">
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='', optionText=#{general.date.placeholder}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='01', optionText=#{general.date.january}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='02', optionText=#{general.date.february}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='03', optionText=#{general.date.march}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='04', optionText=#{general.date.april}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='05', optionText=#{general.date.may}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='06', optionText=#{general.date.june}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='07', optionText=#{general.date.july}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='08', optionText=#{general.date.august}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='09', optionText=#{general.date.september}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='10', optionText=#{general.date.october}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='11', optionText=#{general.date.november}, inputName=${inputName + 'Month'})"/>
-          <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='12', optionText=#{general.date.december}, inputName=${inputName + 'Month'})"/>
-        </select>
+      <div class="date-input-label">
+        <p class="text--help">
+          <label th:for="${inputName}+'-month'"
+                 th:id="${inputName}+'-month-label'"
+                 th:text="#{general.month}"></label>
+        </p>
+        <div class="select">
+          <select class="select__element"
+                  th:id="${inputName}+'-month'"
+                  th:name="${inputName}+'Month'"
+                  th:attr="
+                  aria-describedby=${inputName + '-month-label'},
+                  aria-labelledby=${hasAriaLabel ? ariaLabel : ''},
+                  aria-invalid=${hasErrorMonth}">
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='', optionText=#{general.date.placeholder}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='01', optionText=#{general.date.january}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='02', optionText=#{general.date.february}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='03', optionText=#{general.date.march}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='04', optionText=#{general.date.april}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='05', optionText=#{general.date.may}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='06', optionText=#{general.date.june}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='07', optionText=#{general.date.july}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='08', optionText=#{general.date.august}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='09', optionText=#{general.date.september}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='10', optionText=#{general.date.october}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='11', optionText=#{general.date.november}, inputName=${inputName + 'Month'})"/>
+            <th:block th:replace="'fragments/inputs/selectOption' :: selectOption(value='12', optionText=#{general.date.december}, inputName=${inputName + 'Month'})"/>
+          </select>
+        </div>
       </div>
-      /
-      <input type="text" inputmode="numeric" maxlength="2"
-             class="text-input text-input--inline form-width--day"
-             th:id="${inputName}+'-day'"
-             th:name="${inputName}+'Day'"
-             th:placeholder="dd"
-             th:attr="
-              aria-describedby=${inputName}+'-day-label',
-              aria-labelledby=${hasAriaLabel ? ariaLabel : ''},
-              aria-invalid=${hasErrorDay}"
-             th:value="${inputData.getOrDefault(inputName + 'Day', '')}"/>
-      /
-      <input type="text" inputmode="numeric" maxlength="4"
-             class="text-input text-input--inline form-width--year"
-             th:id="${inputName}+'-year'"
-             th:name="${inputName}+ 'Year'"
-             th:placeholder="yyyy"
-             th:attr="
-              aria-describedby=${inputName}+'-year-label',
-              aria-labelledby=${hasAriaLabel ? ariaLabel : ''},
-              aria-invalid=${hasErrorYear}"
-             th:value="${inputData.getOrDefault(inputName + 'Year', '')}"/>
+      <div class="date-input-label">
+        <p class="text--help">
+          <label th:for="${inputName}+'-day'"
+                 th:id="${inputName}+'-day-label'"
+                 th:text="#{general.day}"></label>
+        </p>
+        <input type="text" inputmode="numeric" maxlength="2"
+               class="text-input text-input--inline form-width--day"
+               th:id="${inputName}+'-day'"
+               th:name="${inputName}+'Day'"
+               th:placeholder="dd"
+               th:attr="
+                aria-describedby=${inputName}+'-day-label',
+                aria-labelledby=${hasAriaLabel ? ariaLabel : ''},
+                aria-invalid=${hasErrorDay}"
+               th:value="${inputData.getOrDefault(inputName + 'Day', '')}"/>
+      </div>
+      <div class="date-input-label">
+        <p class="text--help">
+          <label th:for="${inputName}+'-year'"
+                 th:id="${inputName}+'-year-label'"
+                 th:text="#{general.year}"></label>
+        </p>
+        <input type="text" inputmode="numeric" maxlength="4"
+               class="text-input text-input--inline form-width--year"
+               th:id="${inputName}+'-year'"
+               th:name="${inputName}+ 'Year'"
+               th:placeholder="yyyy"
+               th:attr="
+                aria-describedby=${inputName}+'-year-label',
+                aria-labelledby=${hasAriaLabel ? ariaLabel : ''},
+                aria-invalid=${hasErrorYear}"
+               th:value="${inputData.getOrDefault(inputName + 'Year', '')}"/>
+      </div>
     </fieldset>
     <th:block
         th:replace="fragments/inputError :: validationError(inputName=${inputName} + 'Month')"></th:block>
