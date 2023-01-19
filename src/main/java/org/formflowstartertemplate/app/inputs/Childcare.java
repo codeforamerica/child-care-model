@@ -1,107 +1,110 @@
 package org.formflowstartertemplate.app.inputs;
 
+import java.util.ArrayList;
+import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
+
 @Data
 public class Childcare {
 
-    private String _csrf;
-    @NotBlank()
+  private String _csrf;
 
-    private String firstTimeApplying;
+  @NotBlank()
+  private String firstTimeApplying;
 
-    @NotBlank()
-    private String firstName;
+  @NotBlank()
+  private String firstName;
 
-    @NotBlank()
-    private String lastName;
+  @NotBlank()
+  private String lastName;
 
-    private String middleName;
+  private String middleName;
 
-    private String hasChildren;
+  private String hasChildren;
 
-    @NotBlank()
-    private String dateofBirthDay;
+  @NotBlank()
+  private String dateofBirthDay;
 
-    @NotBlank()
-    private String dateofBirthMonth;
+  @NotBlank()
+  private String dateofBirthMonth;
 
-    @NotBlank()
-    private String dateofBirthYear;
-    @NotBlank()
-    private String childFirstName;
+  @NotBlank()
+  private String dateofBirthYear;
 
-    private String childMiddleName;
+  @NotBlank()
+  private String childFirstName;
 
-    @NotBlank()
-    private String childLastName;
+  private String childMiddleName;
 
-    @NotBlank()
-    private String childDateofBirthDay;
+  @NotBlank()
+  private String childLastName;
 
-    @NotBlank()
-    private String childDateofBirthMonth;
+  @NotBlank()
+  private String childDateofBirthDay;
 
-    @NotBlank()
-    private String childDateofBirthYear;
+  @NotBlank()
+  private String childDateofBirthMonth;
 
-    @NotBlank()
-    private String childInFosterCare;
+  @NotBlank()
+  private String childDateofBirthYear;
 
-    @NotBlank()
-    private String childRelationship;
+  @NotBlank()
+  private String childInFosterCare;
 
-    @NotBlank()
-    private String childHasDisability;
+  @NotBlank()
+  private String childRelationship;
 
+  @NotBlank()
+  private String childHasDisability;
 
-    @PositiveOrZero()
-    private String numChildrenNotNeedingCare;
+  @PositiveOrZero()
+  private String numChildrenNotNeedingCare;
 
-    @NotBlank()
-    private String childrenNotNeedingCare;
+  @NotBlank()
+  private String childrenNotNeedingCare;
 
-    @NotBlank()
-    private String receiveCashAssistance;
+  @NotBlank()
+  private String receiveCashAssistance;
 
-    @NotBlank()
-    private String currentLivingSituation;
+  @NotBlank()
+  private String currentLivingSituation;
 
-    @NotBlank()
-    private String experiencingDomesticViolence;
+  @NotBlank()
+  private String experiencingDomesticViolence;
 
-    @NotBlank()
-    private String impactedByEmergency;
+  @NotBlank()
+  private String impactedByEmergency;
 
-    @NotBlank()
-    private String childrenUnderCourtSupervision;
+  @NotBlank()
+  private String childrenUnderCourtSupervision;
 
-    @NotBlank()
-    private String currentlyWorking;
+  @NotBlank()
+  private String currentlyWorking;
 
-    @NotBlank()
-    private String searchingForEmployment;
+  @NotBlank()
+  private String searchingForEmployment;
 
-    @NotBlank()
-    private String freelanceJob;
+  @NotBlank()
+  private String freelanceJob;
 
-    @PositiveOrZero()
-    private String incomeLast30Days;
+  @PositiveOrZero()
+  private String incomeLast30Days;
 
-    @NotBlank()
-    private String employerName;
+  @NotBlank()
+  private String employerName;
 
-    @NotBlank()
-    private String lessMoneyNextMonth;
+  @NotBlank()
+  private String lessMoneyNextMonth;
 
-    private String anythingElseAboutJob;
+  private String anythingElseAboutJob;
 
-    @NotBlank()
-    private String attestToCorrectInfo;
+  @NotEmpty
+  private ArrayList<String> attestToCorrectInfo;
 
-    @NotBlank()
-    private String digitalSignature;
+  @NotBlank()
+  private String digitalSignature;
 
 }
