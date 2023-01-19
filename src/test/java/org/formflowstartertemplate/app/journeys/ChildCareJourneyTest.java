@@ -116,6 +116,13 @@ public class ChildCareJourneyTest extends JourneyTest {
 
     testPage.clickButton("Next");
 
+    testPage.enter("employerName", "code for america");
+    WebElement hasFreelanceJob = driver.findElement(By.id("freelanceJob-No"));
+    hasFreelanceJob.click();
+    testPage.enter("incomeLast30Days", "500");
+    testPage.clickButton("Next");
+    testPage.clickButton("That's all the jobs I worked this year");
+
 
 
     assertThat(testPage.getCssSelectorText(".spacing-above-15")).contains("End of Childcare Flow");

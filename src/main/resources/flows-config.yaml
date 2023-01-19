@@ -41,7 +41,8 @@ flow:
     nextScreens: null
 
   reviewJobs:
-    nextScreens: null
+    nextScreens:
+      - name: endOfWorkflow
 
   searchingForWork:
     nextScreens: null
