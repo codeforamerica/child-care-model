@@ -118,6 +118,8 @@ public class ChildCareJourneyTest extends JourneyTest {
     WebElement hasFreelanceJob = driver.findElement(By.id("freelanceJob-No"));
     hasFreelanceJob.click();
     testPage.enter("incomeLast30Days", "500");
+    WebElement lessMoneyNextMonth = driver.findElement(By.id("lessMoneyNextMonth-Yes"));
+    lessMoneyNextMonth.click();
     testPage.clickButton("Next");
     testPage.clickButton("That's all the jobs I worked this year");
 
