@@ -23,9 +23,6 @@
               <li th:text="#{review-terms.li3}"></li>
             </ul>
 
-            <!--  TODO: Remove after debugging  -->
-            <pre th:text="${errorMessages}"></pre>
-
             <th:block th:replace="'fragments/inputs/checkbox' ::
               checkbox(inputName='attestToCorrectInfo',
               label=#{review-terms.checkbox-label},
