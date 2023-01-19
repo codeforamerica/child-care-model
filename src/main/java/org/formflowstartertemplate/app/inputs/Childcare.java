@@ -89,4 +89,8 @@ public class Childcare {
 
     private String employerName;
 
+    private String lessMoneyNextMonth;
+
+    private String anythingElseAboutJob;
+
 }

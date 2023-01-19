@@ -1,8 +1,6 @@
 package org.formflowstartertemplate.app.journeys;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.formflowstartertemplate.app.utils.YesNoAnswer.NO;
-import static org.formflowstartertemplate.app.utils.YesNoAnswer.YES;
 import org.openqa.selenium.WebElement;
 
 import org.junit.jupiter.api.Test;

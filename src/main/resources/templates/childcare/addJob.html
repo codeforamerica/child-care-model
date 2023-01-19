@@ -39,6 +39,25 @@
                     th:replace="'fragments/inputs/money' :: money(inputName='incomeLast30Days',
                     label=#{work-and-income.money-last-30-days},
                     helpText=#{work-and-income.money-last-30-days.help})"/>
+                <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                              radioFieldset(inputName='lessMoneyNextMonth',
+                              label=#{work-and-income.less-than-last-month-question},
+                              fieldsetHelpText=#{work-and-income.less-than-last-month-question.help},
+                              content=~{::lessThanLastOptions})">
+                              <th:block th:ref="lessThanLastOptions">
+                                <!-- Copy the below input if you want to add more -->
+                                <th:block
+                                    th:replace="'fragments/inputs/radio' :: radio(inputName='lessMoneyNextMonth',value='Yes', label=#{general.option-yes})"/>
+                                <th:block
+                                    th:replace="'fragments/inputs/radio' :: radio(inputName='lessMoneyNextMonth',value='No', label=#{general.option-no})"/>
+                              </th:block>
+                            </th:block>
+                <th:block th:replace="'fragments/inputs/textArea' ::
+                  textArea(inputName='anythingElseAboutJob',
+                  label=#{work-and-income.anything-else-question},
+                  helpText=#{work-and-income.anything-else-question.help},
+                  rows=3,
+                  maxLength=10)" />
               </div>
             <div class="form-card__footer">
               <th:block th:replace="fragments/inputs/submitButton :: submitButton(

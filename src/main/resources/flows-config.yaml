@@ -45,7 +45,8 @@ flow:
       - name: endOfWorkflow
 
   searchingForWork:
-    nextScreens: null
+    nextScreens:
+      - name: endOfWorkflow
 
   workAndIncome:
     nextScreens:
