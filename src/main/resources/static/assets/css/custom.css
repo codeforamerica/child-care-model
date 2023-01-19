@@ -1,8 +1,13 @@
 /* This file is provided for addition of custom CSS styles */
 
 body {
-  background: #fff;
+  background: #d9e8f6;
   color: #000c;
+}
+
+.toolbar__wrapper,
+.main-footer {
+  background-color: #1a4480;
 }
 
 .button {
