@@ -1,6 +1,7 @@
 package org.formflowstartertemplate.app.journeys;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import org.openqa.selenium.WebElement;
 
 import org.junit.jupiter.api.Test;
@@ -93,7 +94,8 @@ public class ChildCareJourneyTest extends JourneyTest {
     WebElement receivesCashAssistance = driver.findElement(By.id("receiveCashAssistance-Yes"));
     receivesCashAssistance.click();
 
-    WebElement livingInShelter = driver.findElement(By.id("currentLivingSituation-Staying in an emergency or transitional shelter"));
+    WebElement livingInShelter = driver.findElement(
+        By.id("currentLivingSituation-Staying in an emergency or transitional shelter"));
     livingInShelter.click();
 
     WebElement noDomesticViolence = driver.findElement(By.id("experiencingDomesticViolence-No"));
@@ -110,8 +112,6 @@ public class ChildCareJourneyTest extends JourneyTest {
     WebElement currentlyWorking = driver.findElement(By.id("currentlyWorking-Yes"));
     currentlyWorking.click();
 
-
-
     testPage.clickButton("Next");
 
     testPage.enter("employerName", "code for america");
@@ -123,9 +123,15 @@ public class ChildCareJourneyTest extends JourneyTest {
     testPage.clickButton("Next");
     testPage.clickButton("That's all the jobs I worked this year");
 
+    // Review terms
+    assertThat(testPage.getCssSelectorText(".spacing-above-15")).contains(
+        "Please read the terms and sign below, then you're done!");
+    WebElement attestToCorrectInfoCheckbox = driver.findElement(By.id("attestToCorrectInfo-true"));
+    attestToCorrectInfoCheckbox.click();
+    testPage.enter("digitalSignature", "First Last");
+    testPage.clickButton("Submit application");
 
-
+    // End of flow
     assertThat(testPage.getCssSelectorText(".spacing-above-15")).contains("End of Childcare Flow");
-
   }
 }

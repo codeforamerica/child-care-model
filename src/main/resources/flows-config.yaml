@@ -42,11 +42,11 @@ flow:
 
   reviewJobs:
     nextScreens:
-      - name: endOfWorkflow
+      - name: reviewTerms
 
   searchingForWork:
     nextScreens:
-      - name: endOfWorkflow
+      - name: reviewTerms
 
   workAndIncome:
     nextScreens:
@@ -56,6 +56,10 @@ flow:
 
   childDeleteConfirmation:
     nextScreens: null
+
+  reviewTerms:
+    nextScreens:
+      - name: endOfWorkflow
 
 subflows:
   children:
