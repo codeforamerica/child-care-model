@@ -42,7 +42,7 @@ flow:
 
   reviewJobs:
     nextScreens:
-      - name: endOfWorkflow
+      - name: reviewTerms
 
   searchingForWork:
     nextScreens:
