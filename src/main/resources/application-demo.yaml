@@ -5,4 +5,4 @@ spring:
     url: jdbc:postgresql://host.docker.internal:5432/child-care-model-illinois
 form-flow:
   aws:
-    s3_bucket_name: 'form-flow-demo'
+    s3_bucket_name: 'child-care-illinois-demo'
