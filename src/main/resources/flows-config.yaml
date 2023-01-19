@@ -30,16 +30,44 @@ flow:
 
   protectiveServices:
     nextScreens:
+      - name: workAndIncome
+
+  addJob:
+    subflow: jobs
+    nextScreens:
+      - name: reviewJobs
+
+  jobDeleteConfirmation:
+    nextScreens: null
+
+  reviewJobs:
+    nextScreens:
       - name: endOfWorkflow
+
+  searchingForWork:
+    nextScreens:
+      - name: endOfWorkflow
+
+  workAndIncome:
+    nextScreens:
+      - name: addJob
+        condition: org.formflowstartertemplate.app.submission.conditions.HasJob
+      - name: searchingForWork
 
   childDeleteConfirmation:
     nextScreens: null
+
 subflows:
   children:
     entryScreen: childInfo
     iterationStartScreen: addChild
     reviewScreen: reviewChildren
     deleteConfirmationScreen: childDeleteConfirmation
+  jobs:
+    entryScreen: workAndIncome
+    iterationStartScreen: addJob
+    reviewScreen: reviewJobs
+    deleteConfirmationScreen: jobDeleteConfirmation
 ---
 name: ubi
 conditionsPath: org.formflowstartertemplate.app.submission.conditions

@@ -1,8 +1,6 @@
 package org.formflowstartertemplate.app.journeys;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.formflowstartertemplate.app.utils.YesNoAnswer.NO;
-import static org.formflowstartertemplate.app.utils.YesNoAnswer.YES;
 import org.openqa.selenium.WebElement;
 
 import org.junit.jupiter.api.Test;
@@ -15,13 +13,6 @@ public class ChildCareJourneyTest extends JourneyTest {
     // Landing screen
     assertThat(testPage.getTitle()).isEqualTo("Get child care assistance");
     testPage.clickButton("Apply For Child Care Benefits");
-    // How this works
-//    testPage.clickContinue();
-//    // Language preference
-//    testPage.clickContinue();
-//    // Getting to know you
-//    testPage.clickContinue();
-//    // Personal info
     testPage.enter("firstName", "Testy");
     testPage.enter("lastName", "McTesterson");
     testPage.enter("dateofBirthDay", "01");
@@ -115,6 +106,24 @@ public class ChildCareJourneyTest extends JourneyTest {
     noChildrenUnderCourtSupervision.click();
 
     testPage.clickButton("Next");
+
+    WebElement currentlyWorking = driver.findElement(By.id("currentlyWorking-Yes"));
+    currentlyWorking.click();
+
+
+
+    testPage.clickButton("Next");
+
+    testPage.enter("employerName", "code for america");
+    WebElement hasFreelanceJob = driver.findElement(By.id("freelanceJob-No"));
+    hasFreelanceJob.click();
+    testPage.enter("incomeLast30Days", "500");
+    WebElement lessMoneyNextMonth = driver.findElement(By.id("lessMoneyNextMonth-Yes"));
+    lessMoneyNextMonth.click();
+    testPage.clickButton("Next");
+    testPage.clickButton("That's all the jobs I worked this year");
+
+
 
     assertThat(testPage.getCssSelectorText(".spacing-above-15")).contains("End of Childcare Flow");
 
