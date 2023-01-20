@@ -12,7 +12,7 @@ flow:
         condition: org.formflowstartertemplate.app.submission.conditions.HasChildren
       - name: protectiveServices
 
-  endOfWorkflow:
+  applicationConfirmation:
     nextScreens: null
 
   addChild:
@@ -64,7 +64,7 @@ flow:
 
   reviewTerms:
     nextScreens:
-      - name: endOfWorkflow
+      - name: applicationConfirmation
 
 subflows:
   children:

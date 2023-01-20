@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title='end of workflow')"></head>
+<body>
+<div class="page-wrapper">
+  <div th:replace="fragments/toolbar :: toolbar"></div>
+  <div th:replace="fragments/goBack :: goBackLink"></div>
+  <main id="content" role="main" class="form-card spacing-above-15">
+    <div class="spacing-below-25 usa-card__heading">
+      <h1 class="usa-card__heading" th:text="#{application-confirmation.header}">
+      </h1>
+    </div>
+    <p th:with="confirmationNumber=${T(org.formflowstartertemplate.app.utils.ViewUtilities).getConfirmationNumber()}"
+        th:utext="#{application-confirmation.confirmation-number(${confirmationNumber})}"></p>
+    <p th:utext="#{application-confirmation.submission-date(${execInfo.now.time})}"></p>
+    <hr>
+    <p th:utext="#{application-confirmation.how-long}"></p>
+    <p th:text="#{application-confirmation.how-long.description}"></p>
+
+    <div class="content-card content-card--grey spacing-below-25">
+      <p th:utext="#{application-confirmation.how-long.card.header}"></p>
+      <p th:utext="#{application-confirmation.how-long.card.description}"></p>
+    </div>
+
+    <p th:utext="#{application-confirmation.next-steps.header}"></p>
+    <p th:utext="#{application-confirmation.next-steps.description}"></p>
+
+  </main>
+</div>
+<th:block th:replace="fragments/footer :: footer" />
+</body>
+</html>
