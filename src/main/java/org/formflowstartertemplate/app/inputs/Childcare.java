@@ -7,6 +7,7 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
 
+import org.formflowstartertemplate.app.annotations.NullOrPositiveValidation;
 import org.springframework.web.multipart.MultipartFile;
 @Data
 public class Childcare {
@@ -61,7 +62,7 @@ public class Childcare {
   @NotBlank()
   private String childHasDisability;
 
-  @PositiveOrZero()
+  @NullOrPositiveValidation()
   private String numChildrenNotNeedingCare;
 
   @NotBlank()
