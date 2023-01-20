@@ -12,7 +12,7 @@
     </div>
     <p th:with="confirmationNumber=${T(org.formflowstartertemplate.app.utils.ViewUtilities).getConfirmationNumber()}"
         th:utext="#{application-confirmation.confirmation-number(${confirmationNumber})}"></p>
-    <p th:utext="#{application-confirmation.submission-date(${execInfo.now.time})}"></p>
+    <p th:utext="#{application-confirmation.submission-date(${#dates.format(#dates.createNow(),'MM/dd/YYYY')})}"></p>
     <hr>
     <p th:utext="#{application-confirmation.how-long}"></p>
     <p th:text="#{application-confirmation.how-long.description}"></p>
