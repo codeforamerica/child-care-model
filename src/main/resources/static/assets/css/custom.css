@@ -1,5 +1,33 @@
 /* This file is provided for addition of custom CSS styles */
 
+@font-face {
+  font-family: 'Merriweather';
+  src:  url('../fonts/Merriweather/Merriweather-Regular.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src:  url('../fonts/Merriweather/Merriweather-Bold.ttf')  format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src:  url('../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src:  url('../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf')  format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   background: #d9e8f6;
   color: #000c;
@@ -65,7 +93,7 @@ ul.no-bullets {
 }
 
 .form-card__content {
-  font-family: Source Sans Pro Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
   font-size: 2.06rem;
 }
 
@@ -122,7 +150,7 @@ a:visited, .button--link:visited {
 }
 /* Taken from USWDS */
 .usa-card__heading {
-  font-family: Merriweather Web,Georgia,Cambria,Times New Roman,Times,serif;
+  font-family: Merriweather, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 4.5rem;
   line-height: 1.2;
   margin: 0;
