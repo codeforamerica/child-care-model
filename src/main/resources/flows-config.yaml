@@ -42,9 +42,14 @@ flow:
 
   reviewJobs:
     nextScreens:
-      - name: reviewTerms
+      - name: uploadDocumentation
 
   searchingForWork:
+    nextScreens:
+      - name: uploadDocumentation
+
+
+  uploadDocumentation:
     nextScreens:
       - name: reviewTerms
 

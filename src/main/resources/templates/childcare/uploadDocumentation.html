@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}">
+<head th:replace="fragments/head :: head(title=#{upload-documentation.title})"></head>
+<body>
+<div class="page-wrapper">
+  <div th:replace="fragments/toolbar :: toolbar"></div>
+  <section class="slab">
+    <div class="grid">
+      <div th:replace="fragments/goBack :: goBackLink"></div>
+      <main id="content" role="main" class="form-card spacing-above-35" style="max-width: 66ex;">
+        <p th:utext="#{general.step3}"></p>
+        <div class="spacing-below-25 usa-card__heading">
+          <h1 class="usa-card__heading">
+            <th:block th:text="#{upload-documentation.header}"/>
+          </h1>
+        </div>
+
+          <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::uploadDocumentation})">
+            <th:block th:ref="uploadDocumentation">
+              <div class="form-card__content">
+                <p th:text="#{upload-documentation.description}"></p>
+                <ol class="usa-list">
+                  <li th:utext="#{upload-documentation.identity-verification}"></li>
+                    <ul class="list--bulleted">
+                      <li th:text="#{upload-documentation.identity-verification.li1}"></li>
+                      <li th:text="#{upload-documentation.identity-verification.li2}"></li>
+                      <li th:text="#{upload-documentation.identity-verification.li3}"></li>
+                      <li th:text="#{upload-documentation.identity-verification.li4}"></li>
+                      <li th:text="#{upload-documentation.identity-verification.li5}"></li>
+                      <li th:text="#{upload-documentation.identity-verification.li6}"></li>
+                      <li th:text="#{upload-documentation.identity-verification.li7}"></li>
+                      <li th:text="#{upload-documentation.identity-verification.li8}"></li>
+                      <li th:text="#{upload-documentation.identity-verification.li9}"></li>
+                    </ul>
+                  <th:block th:if="${inputData.containsKey('children')}">
+                    <li th:each="child, iter: ${inputData.children}" th:utext="#{upload-documentation.identity-verification-child(${child.childFirstName} + ' ' + ${child.childLastName})}"></li>
+                    <ul class="list--bulleted">
+                      <li th:text="#{upload-documentation.identity-verification-child.li1}"></li>
+                      <li th:text="#{upload-documentation.identity-verification-child.li2}"></li>
+                      <li th:text="#{upload-documentation.identity-verification-child.li3}"></li>
+                      <li th:text="#{upload-documentation.identity-verification-child.li4}"></li>
+                    </ul>
+                  </th:block>
+                  <th:block th:if="${inputData.containsKey('jobs')}">
+                    <li th:each="job, iter: ${inputData.jobs}" th:utext="#{upload-documentation.income-verification(${job.employerName})}" th:if="${job.freelanceJob} == 'No'"></li>
+                    <ul class="list--bulleted">
+                      <li th:text="#{upload-documentation.income-verification.l1}"></li>
+                      <li th:text="#{upload-documentation.income-verification.l2}"></li>
+                      <li th:text="#{upload-documentation.income-verification.l3}"></li>
+                    </ul>
+                  </th:block>
+                  <th:block th:if="${inputData.containsKey('jobs')}">
+                    <li th:each="job, iter: ${inputData.jobs}" th:utext="#{upload-documentation.li4(${job.employerName})}" th:if="${job.freelanceJob} == 'Yes'"></li>
+                    <ul class="list--bulleted">
+                      <li th:text="#{upload-documentation.self-employment-income.li1}"></li>
+                      <li th:text="#{upload-documentation.self-employment-income.li2}"></li>
+                      <li th:text="#{upload-documentation.self-employment-income.li3}"></li>
+                      <li th:text="#{upload-documentation.self-employment-income.li4}"></li>
+                      <li th:text="#{upload-documentation.self-employment-income.li5}"></li>
+                      <li th:text="#{upload-documentation.self-employment-income.li6}"></li>
+                    </ul>
+                  </th:block>
+                </ol>
+                <hr>
+                  <h2 th:text="#{upload-documentation.submit-proof}">
+                  </h2>
+                <p th:text="#{upload-documentation.submit-proof.description}"></p>
+                <th:block th:replace="fragments/fileUploader :: fileUploader(inputName='uploadDocuments')"></th:block>
+
+              </div>
+            <div class="form-card__footer">
+              <th:block th:replace="fragments/inputs/submitButton :: submitButton(
+                    text=#{upload-documentation.button-text})" />
+              
+            </div>
+          </th:block>
+        </th:block>
+      </main>
+    </div>
+  </section>
+</div>
+<th:block th:replace="fragments/footer :: footer" />
+</body>
+</html>
