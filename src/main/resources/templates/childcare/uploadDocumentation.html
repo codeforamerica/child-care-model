@@ -33,32 +33,42 @@
                       <li th:text="#{upload-documentation.identity-verification.li9}"></li>
                     </ul>
                   <th:block th:if="${inputData.containsKey('children')}">
-                    <li th:each="child, iter: ${inputData.children}" th:utext="#{upload-documentation.identity-verification-child(${child.childFirstName} + ' ' + ${child.childLastName})}"></li>
-                    <ul class="list--bulleted">
-                      <li th:text="#{upload-documentation.identity-verification-child.li1}"></li>
-                      <li th:text="#{upload-documentation.identity-verification-child.li2}"></li>
-                      <li th:text="#{upload-documentation.identity-verification-child.li3}"></li>
-                      <li th:text="#{upload-documentation.identity-verification-child.li4}"></li>
-                    </ul>
+                    <li th:each="child, iter: ${inputData.children}" >
+                      [(#{upload-documentation.identity-verification-child(${child.childFirstName} + ' ' + ${child.childLastName})})]
+                      <ul class="list--bulleted">
+                        <li th:text="#{upload-documentation.identity-verification-child.li1}"></li>
+                        <li th:text="#{upload-documentation.identity-verification-child.li2}"></li>
+                        <li th:text="#{upload-documentation.identity-verification-child.li3}"></li>
+                        <li th:text="#{upload-documentation.identity-verification-child.li4}"></li>
+                      </ul>
+                    </li>
+
                   </th:block>
                   <th:block th:if="${inputData.containsKey('jobs')}">
-                    <li th:each="job, iter: ${inputData.jobs}" th:utext="#{upload-documentation.income-verification(${job.employerName})}" th:if="${job.freelanceJob} == 'No'"></li>
-                    <ul class="list--bulleted">
-                      <li th:text="#{upload-documentation.income-verification.l1}"></li>
-                      <li th:text="#{upload-documentation.income-verification.l2}"></li>
-                      <li th:text="#{upload-documentation.income-verification.l3}"></li>
-                    </ul>
+                    <li th:each="job, iter: ${inputData.jobs}" th:if="${job.freelanceJob} == 'No'">
+                      [(#{upload-documentation.income-verification(${job.employerName})})]
+                      <ul class="list--bulleted">
+                        <li th:text="#{upload-documentation.income-verification.l1}"></li>
+                        <li th:text="#{upload-documentation.income-verification.l2}"></li>
+                        <li th:text="#{upload-documentation.income-verification.l3}"></li>
+                      </ul>
+                    </li>
+
                   </th:block>
                   <th:block th:if="${inputData.containsKey('jobs')}">
-                    <li th:each="job, iter: ${inputData.jobs}" th:utext="#{upload-documentation.li4(${job.employerName})}" th:if="${job.freelanceJob} == 'Yes'"></li>
-                    <ul class="list--bulleted">
-                      <li th:text="#{upload-documentation.self-employment-income.li1}"></li>
-                      <li th:text="#{upload-documentation.self-employment-income.li2}"></li>
-                      <li th:text="#{upload-documentation.self-employment-income.li3}"></li>
-                      <li th:text="#{upload-documentation.self-employment-income.li4}"></li>
-                      <li th:text="#{upload-documentation.self-employment-income.li5}"></li>
-                      <li th:text="#{upload-documentation.self-employment-income.li6}"></li>
-                    </ul>
+                    <li th:each="job, iter: ${inputData.jobs}" th:if="${job.freelanceJob} == 'Yes'">
+                      <!-- Unescaped inline -->
+                      [(#{upload-documentation.li4(${job.employerName})})]
+                      <ul class="list--bulleted">
+                        <li th:text="#{upload-documentation.self-employment-income.li1}"></li>
+                        <li th:text="#{upload-documentation.self-employment-income.li2}"></li>
+                        <li th:text="#{upload-documentation.self-employment-income.li3}"></li>
+                        <li th:text="#{upload-documentation.self-employment-income.li4}"></li>
+                        <li th:text="#{upload-documentation.self-employment-income.li5}"></li>
+                        <li th:text="#{upload-documentation.self-employment-income.li6}"></li>
+                      </ul>
+                    </li>
+
                   </th:block>
                 </ol>
                 <hr>
