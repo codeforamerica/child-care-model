@@ -1,0 +1,22 @@
+// 1. Load USWDS settings
+//@use "uswds-core" with (
+//  $theme-show-compile-warnings: true,
+//  $theme-color-base-family: "gray-cool"
+//);
+
+// 2. Load USWDS source code
+@forward "../../../generated/META-INF/resources/webjars/uswds/3.0.2/scss/stylesheets/uswds.scss";
+
+// 3. Load your project's custom Sass
+$pink: hotpink;
+$teal: teal;
+
+body {
+  .slab--white {
+    background: $pink !important;
+  }
+
+  a {
+    color: $teal !important;
+  }
+}
