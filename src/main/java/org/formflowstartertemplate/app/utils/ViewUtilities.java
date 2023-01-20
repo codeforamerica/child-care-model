@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class ViewUtilities {
 
@@ -63,6 +65,13 @@ public class ViewUtilities {
     }
 
     return null;
+  }
+
+  public static String getConfirmationNumber(){
+    String uuid = UUID.randomUUID().toString();
+    uuid = uuid.replace("-", "");
+    String confirmation = uuid.toUpperCase();
+    return String.format("%."+ 10 +"s", confirmation);
   }
 
   public static int getUuid() {
