@@ -123,6 +123,9 @@ public class ChildCareJourneyTest extends JourneyTest {
     testPage.clickButton("Next");
     testPage.clickButton("That's all the jobs I worked this year");
 
+    // Document upload
+    testPage.clickButton("I've submitted as much proof as I can");
+
     // Review terms
     assertThat(testPage.getCssSelectorText(".spacing-above-15")).contains(
         "Please read the terms and sign below, then you're done!");
