@@ -5,7 +5,8 @@
 //);
 
 // 2. Load USWDS source code
-@forward "../../../generated/META-INF/resources/webjars/uswds/3.0.2/scss/stylesheets/uswds.scss";
+//@import "scss/stylesheets/uswds.scss";
+@forward "test";
 
 // 3. Load your project's custom Sass
 $pink: hotpink;

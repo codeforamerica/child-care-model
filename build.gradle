@@ -28,6 +28,9 @@ compileSass {
     // Directory where to output generated CSS:
     outputDir = project.file("${projectDir}/generated/main/resources/static/assets/css")
 
+    // Load path
+    loadPath project.file ("${projectDir}/generated/META-INF/resources/webjars/uswds/3.0.2")
+
     // Set the output style:
     // Possible values are “expanded” and “compressed”, default is “expanded”.
     style = expanded
