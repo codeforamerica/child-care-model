@@ -12,6 +12,17 @@ form-flow:
     access_key: ${AWS_ACCESS_KEY}
     secret_key: ${AWS_SECRET_KEY}
 spring:
+  profiles:
+    group:
+      test:
+        - test
+        - form-flow-library-test
+      dev:
+        - dev
+        - form-flow-library
+      demo:
+        - demo
+        - form-flow-library
   thymeleaf:
     cache: false
     template-resolver-order: 0
