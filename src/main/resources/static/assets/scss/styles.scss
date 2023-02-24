@@ -1,0 +1,30 @@
+// 1. Load USWDS settings
+@use "uswds-core" with (
+    $theme-show-compile-warnings: true,
+    $theme-show-notifications: false,
+    $theme-banner-background-color: "magenta-40",
+    $theme-body-background-color: "mint-10v",
+    $theme-text-color: "yellow-20v",
+    $theme-banner-link-color: "primary-light",
+    $theme-banner-max-width: "widescreen",
+    $theme-checkbox-border-radius: "md",
+);
+
+// 2. Load USWDS source code
+@forward "@uswds/uswds/packages/uswds/_index";
+
+// 3. Load your project's custom Sass
+@forward "test";
+
+$pink: hotpink;
+$teal: teal;
+
+body {
+  .slab--white {
+    background: $pink !important;
+  }
+
+  a {
+    color: $teal !important;
+  }
+}

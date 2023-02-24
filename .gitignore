@@ -2,6 +2,7 @@
 HELP.md
 .gradle
 build/
+generated
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
@@ -39,3 +40,6 @@ out/
 
 ### Mac OS ###
 .DS_Store
+
+### NPM ###
+node_modules/

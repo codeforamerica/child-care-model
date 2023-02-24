@@ -4,6 +4,54 @@ plugins {
     id 'java'
     id 'com.gorylenko.gradle-git-properties' version '2.3.2'
     id 'com.adarshr.test-logger' version '3.2.0'
+    id 'io.miret.etienne.sass' version '1.4.2'
+}
+
+// Get .env properties
+def props = new Properties()
+if (file(".env").exists()) {
+    file(".env").withInputStream { props.load(it) }
+}
+def profile = props.getProperty('SPRING_PROFILES_ACTIVE')
+
+sass {
+    // Version of dart-sass: https://github.com/sass/dart-sass/releases
+    version = '1.57.1'
+}
+
+// Docs: https://github.com/EtienneMiret/sass-gradle-plugin#usage
+compileSass {
+    // TODO: dependsOn a task to npm install
+    dependsOn 'moveNodeModulesToGenerated'
+    // Source directory containing sass to compile:
+    sourceDir = project.file("${projectDir}/src/main/resources/static/assets/scss")
+
+    // Directory where to output generated CSS:
+    outputDir = project.file("${projectDir}/generated/main/resources/static/assets/css")
+
+    // Load path
+    loadPath project.file ("${projectDir}/generated/main/resources/static")
+    loadPath project.file ("${projectDir}/generated/main/resources/static/@uswds/uswds/packages")
+
+    // Set the output style:
+    // Possible values are “expanded” and “compressed”, default is “expanded”.
+    style = expanded
+
+    // Watch sass files in sourceDir for changes
+    // (Default is to not to watch, compile once and terminate)
+//    if (profile == 'dev') {
+//        watch()
+//    }
+}
+
+// compileSass needs to run before processResources
+processResources {
+    dependsOn compileSass
+}
+
+// Need to extend clean to also delete the generated directory (created in compileSass)
+clean {
+    delete "generated"
 }
 
 configurations {
@@ -16,11 +64,6 @@ configurations.configureEach {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
-def props = new Properties()
-if (file(".env").exists()) {
-    file(".env").withInputStream { props.load(it) }
-}
-
 repositories {
     maven {
         url 'https://oss.sonatype.org/content/repositories/snapshots'
@@ -28,14 +71,11 @@ repositories {
     mavenCentral()
 }
 
-def profile = props.getProperty('SPRING_PROFILES_ACTIVE')
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
     implementation 'org.flywaydb:flyway-core'
 
     if (profile == 'dev') {
@@ -69,4 +109,10 @@ springBoot {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+task moveNodeModulesToGenerated(type: Copy) {
+    from 'node_modules'
+    into 'generated/main/resources/static'
+    println('🐸 ran moveNodeModulesToGenerated')
 }
