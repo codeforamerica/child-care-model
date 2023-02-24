@@ -21,7 +21,8 @@ sass {
 
 // Docs: https://github.com/EtienneMiret/sass-gradle-plugin#usage
 compileSass {
-    dependsOn 'unzipWebjars'
+    // TODO: dependsOn a task to npm install
+    dependsOn 'moveNodeModulesToGenerated'
     // Source directory containing sass to compile:
     sourceDir = project.file("${projectDir}/src/main/resources/static/assets/scss")
 
@@ -29,7 +30,8 @@ compileSass {
     outputDir = project.file("${projectDir}/generated/main/resources/static/assets/css")
 
     // Load path
-    loadPath project.file ("${projectDir}/generated/META-INF/resources/webjars/uswds/3.0.2")
+    loadPath project.file ("${projectDir}/generated/main/resources/static")
+    loadPath project.file ("${projectDir}/generated/main/resources/static/@uswds/uswds/packages")
 
     // Set the output style:
     // Possible values are “expanded” and “compressed”, default is “expanded”.
@@ -56,8 +58,6 @@ configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
-    // This will only unpack webjars
-    webjarConfig { transitive = false }
 }
 
 configurations.configureEach {
@@ -76,9 +76,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
-    webjarConfig 'org.webjars:uswds:3.0.2'
-
     implementation 'org.flywaydb:flyway-core'
 
     if (profile == 'dev') {
@@ -114,10 +111,8 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-task unzipWebjars(type: Copy) {
-    configurations.webjarConfig.files.each { jar ->
-        from zipTree(jar)
-    }
-    into 'generated'
-    println('unzipWebjars ran 🐸')
+task moveNodeModulesToGenerated(type: Copy) {
+    from 'node_modules'
+    into 'generated/main/resources/static'
+    println('🐸 ran moveNodeModulesToGenerated')
 }
