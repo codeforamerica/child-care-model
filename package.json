@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/codeforamerica/child-care-model-illinois#readme",
   "dependencies": {
+    "@codeforamerica/design-tokens-test": "github:codeforamerica/design-tokens-test",
     "@uswds/uswds": "^3.3.0"
   }
 }

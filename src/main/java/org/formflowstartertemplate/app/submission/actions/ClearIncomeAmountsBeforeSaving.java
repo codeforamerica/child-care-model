@@ -5,11 +5,13 @@ import formflow.library.data.Submission;
 
 import java.util.ArrayList;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
 /**
  * This is an example of how one could create an Action class. It is referenced from the flows-config.yaml, but is specific to the
  * UBI flow.
  */
+@Component
 public class ClearIncomeAmountsBeforeSaving implements Action {
 
   public void run(Submission submission, String data) {

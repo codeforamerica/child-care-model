@@ -1,6 +1,4 @@
 name: childcare
-conditionsPath: org.formflowstartertemplate.app.submission.conditions
-actionsPath: org.formflowstartertemplate.app.submission.actions
 flow:
   basicInfo:
     nextScreens:
@@ -9,7 +7,7 @@ flow:
   childInfo:
     nextScreens:
       - name: addChild
-        condition: org.formflowstartertemplate.app.submission.conditions.HasChildren
+        condition: HasChildren
       - name: protectiveServices
 
   applicationConfirmation:
@@ -56,7 +54,7 @@ flow:
   workAndIncome:
     nextScreens:
       - name: addJob
-        condition: org.formflowstartertemplate.app.submission.conditions.HasJob
+        condition: HasJob
       - name: searchingForWork
 
   childDeleteConfirmation:
@@ -79,8 +77,6 @@ subflows:
     deleteConfirmationScreen: jobDeleteConfirmation
 ---
 name: ubi
-conditionsPath: org.formflowstartertemplate.app.submission.conditions
-actionsPath: org.formflowstartertemplate.app.submission.actions
 flow:
   howThisWorks:
     nextScreens:
@@ -103,7 +99,7 @@ flow:
   housemates:
     nextScreens:
       - name: housemateInfo
-        condition: org.formflowstartertemplate.app.submission.conditions.HasHousehold
+        condition: HasHousehold
       - name: income
   housemateInfo:
     subflow: household
@@ -126,7 +122,7 @@ flow:
     nextScreens:
       - name: incomeAmounts
   incomeAmounts:
-    beforeSave: org.formflowstartertemplate.app.submission.actions.ClearIncomeAmountsBeforeSaving
+    beforeSaveAction: ClearIncomeAmountsBeforeSaving
     subflow: income
     nextScreens:
       - name: annualHouseholdIncome

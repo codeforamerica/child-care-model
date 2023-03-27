@@ -21,7 +21,7 @@ sass {
 
 // Docs: https://github.com/EtienneMiret/sass-gradle-plugin#usage
 compileSass {
-    // TODO: dependsOn a task to npm install
+    dependsOn 'npmInstall'
     dependsOn 'moveNodeModulesToGenerated'
     // Source directory containing sass to compile:
     sourceDir = project.file("${projectDir}/src/main/resources/static/assets/scss")
@@ -52,6 +52,7 @@ processResources {
 // Need to extend clean to also delete the generated directory (created in compileSass)
 clean {
     delete "generated"
+    delete "node_modules"
 }
 
 configurations {
@@ -115,4 +116,9 @@ task moveNodeModulesToGenerated(type: Copy) {
     from 'node_modules'
     into 'generated/main/resources/static'
     println('🐸 ran moveNodeModulesToGenerated')
+}
+
+task npmInstall(type: Exec) {
+    commandLine 'npm', 'install'
+    println('🦺 ran npmInstall')
 }

@@ -1,30 +1,9 @@
-// 1. Load USWDS settings
-@use "uswds-core" with (
-    $theme-show-compile-warnings: true,
-    $theme-show-notifications: false,
-    $theme-banner-background-color: "magenta-40",
-    $theme-body-background-color: "mint-10v",
-    $theme-text-color: "yellow-20v",
-    $theme-banner-link-color: "primary-light",
-    $theme-banner-max-width: "widescreen",
-    $theme-checkbox-border-radius: "md",
-);
+@forward '@codeforamerica/design-tokens-test/scss/theme/uswds-theme';
+@forward 'uswds';
 
-// 2. Load USWDS source code
-@forward "@uswds/uswds/packages/uswds/_index";
-
-// 3. Load your project's custom Sass
-@forward "test";
-
-$pink: hotpink;
-$teal: teal;
-
-body {
-  .slab--white {
-    background: $pink !important;
-  }
-
-  a {
-    color: $teal !important;
-  }
-}
+@forward '@codeforamerica/design-tokens-test/packages/cfa-accordion/_cfa-accordion.scss';
+@forward '@codeforamerica/design-tokens-test/packages/cfa-alert/_cfa-alert.scss';
+@forward '@codeforamerica/design-tokens-test/packages/cfa-button/_cfa-button.scss';
+@forward '@codeforamerica/design-tokens-test/packages/cfa-form-group/_cfa-form-group.scss';
+@forward '@codeforamerica/design-tokens-test/packages/cfa-input/_cfa-input.scss';
+@forward '@codeforamerica/design-tokens-test/packages/cfa-typesetting/_cfa-typesetting.scss';
