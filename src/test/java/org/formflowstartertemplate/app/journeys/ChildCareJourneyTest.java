@@ -83,7 +83,7 @@ public class ChildCareJourneyTest extends JourneyTest {
     assertThat(testPage.getCssSelectorText(".content-card")).doesNotContain("oscar the grouch");
 
     // continue
-    testPage.clickButton("That's all children needing care");
+    testPage.clickButton("I'm done adding children");
     WebElement hasChildrenNotNeedingCare = driver.findElement(By.id("childrenNotNeedingCare-Yes"));
     hasChildrenNotNeedingCare.click();
 
