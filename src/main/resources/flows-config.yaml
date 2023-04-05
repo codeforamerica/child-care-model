@@ -2,6 +2,10 @@ name: childcare
 flow:
   basicInfo:
     nextScreens:
+      - name: demoConfirmationCheckpoint
+
+  demoConfirmationCheckpoint:
+    nextScreens:
       - name: childInfo
 
   childInfo:
