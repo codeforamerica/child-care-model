@@ -28,8 +28,10 @@ public class ChildCareJourneyTest extends JourneyTest {
 
     assertThat(testPage.getCssSelectorText(".form-card__content")).contains("What is your first name?");
 
-    // Enter subflow
     testPage.clickButton("Next");
+    testPage.clickButton("Continue demonstration");
+
+    // Enter subflow
     testPage.clickButton("+ Add Child");
 
     testPage.enter("childFirstName", "cookie");
