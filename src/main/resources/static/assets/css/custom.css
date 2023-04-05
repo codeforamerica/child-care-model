@@ -40,7 +40,11 @@ body {
 }
 
 .main-footer a:visited {
-  color: #a4a4ait a4;
+  color: #a4a4a4;
+}
+
+.main-footer a:hover {
+  color: #a4a4a4;
 }
 
 .main-footer a {
