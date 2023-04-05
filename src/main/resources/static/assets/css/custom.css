@@ -39,6 +39,14 @@ body {
   color: #d9e8f6;
 }
 
+.main-footer a:visited {
+  color: #cdcdcd;
+}
+
+.main-footer a {
+  color: #e8f6f9;
+}
+
 .demo-banner {
   background-color: #ffbc78;
   color: #332d29;
