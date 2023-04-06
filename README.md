@@ -1,3 +1,21 @@
+# About this CCAP Demo
+
+Code for America, a 501(c)3 nonprofit civic technology organization, is thrilled to support the Administration for Children and Families, Office of Child Care’s model application for CCAP programs. 
+
+We have converted the [federally-approved designs](https://childcareta.acf.hhs.gov/full-model-application) and question flow into open-source Java code. This allows state agencies to quickly adopt the model application and immediately improve the customer experience of applying for child care benefits.
+
+You can view the demo site (currently a work in progress) and experience the application for yourself at: [ccap.codeforamerica.org](https://ccap.codeforamerica.org).
+
+The below information can be sent to your IT and technical teams to jumpstart the support adoption of this free, open-source, federally-approved child care application starter code in your state. 
+
+# ⚠️ Security Disclaimer
+
+This application is still subject to your jurisdiction/organization’s respective software security assurance process. If you clone this application, you are responsible for remediating security requirements and  dependencies.
+
+# Implementation Details
+
+Below are information about using the Form Flow Library for this project.
+
 Table of Contents
 =================
 <!--
@@ -56,6 +74,7 @@ Out-of-the-box, integrations can be set up with common third-party services:
 - Facebook Ads
 
 The relevant service keys and other settings are configurable in `application.yaml`.
+
 
 ## Form Flow Concepts ##
 
