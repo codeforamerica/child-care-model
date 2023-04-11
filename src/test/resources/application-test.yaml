@@ -9,7 +9,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/child-care-model-illinois-test
     username: child-care-model-illinois-test
-    password:
+    password: postgres
   thymeleaf:
     prefix: classpath:/templates/
   flyway:
