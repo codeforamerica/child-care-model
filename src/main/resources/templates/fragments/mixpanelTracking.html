@@ -10,43 +10,19 @@
     'language': navigator.language
   });
 
-  function buttonClickEvent() {
-    const elementId = $(this).attr("id");
-    mixpanel.track('button_click', {
-      'page_name': window.location.pathname,
-      'element_id': elementId,
-      'language': navigator.language
-    });
-    
-    if(elementId === 'language_menu') {
-      mixpanel.track('language_picker_click', {
-        'page_name': window.location.pathname,
-        'language': navigator.language
+  function linkClickEvent() {
+      const elementId = $(this).attr("id");
+      mixpanel.track('link_click', {
+          'page_name': window.location.pathname,
+          'element_id': elementId
       });
-    }
   }
 
   $(document).ready(function () {
     // Track all "button" clicks
-    $("button").each(function () {
+    $("a").each(function () {
       $(this).click(function () {
-        buttonClickEvent.call(this);
-      });
-    });
-    $("a.button").each(function () {
-      $(this).click(function () {
-        buttonClickEvent.call(this);
-      });
-    });
-
-    // Track language selection
-    $(".language-option-track-click").each(function () {
-      $(this).click(function () {
-        mixpanel.track('language_select', {
-          'page_name': window.location.pathname,
-          'language': navigator.language,
-          'selected_language': this.href.split("=")[1]
-        });
+          linkClickEvent.call(this);
       });
     });
   });
