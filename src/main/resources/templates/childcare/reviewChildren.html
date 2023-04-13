@@ -26,11 +26,11 @@
                                   <span th:text="${child.childLastName}" style="font-weight:bold"></span>
                                 </span>
                                 <span class="text--small spacing-below-0">
-                                  <a th:href="'/childcare/' + ${iterationStartScreen} + '/' + ${child.uuid} + '/edit'"
+                                  <a th:href="'/flow' + '/childcare/' + ${iterationStartScreen} + '/' + ${child.uuid} + '/edit'"
                                      th:text='Edit'
                                      th:id="'edit-iteration-' + ${child.uuid}"
                                      class="subflow-edit"></a>
-                                  <a th:href="'/childcare/children/' + ${child.uuid} + '/deleteConfirmation'"
+                                  <a th:href="'/flow' + '/childcare/children/' + ${child.uuid} + '/deleteConfirmation'"
                                      th:text='Remove'
                                      class="subflow-delete"
                                      th:id="'delete-iteration-' + ${child.uuid}"></a>
@@ -54,7 +54,7 @@
             </ul>
           </div>
         <div class="spacing-above-35">
-        <a th:href="'/' + ${flow} + '/addChild'" class="button button--no-children"
+        <a th:href="'/flow' + '/' + ${flow} + '/addChild'" class="button button--no-children"
            th:text="#{review-children.add-another-child}"></a>
         </div>
         <div class="form-card__footer">

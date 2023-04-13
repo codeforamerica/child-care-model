@@ -44,4 +44,5 @@ jobs:
           'AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY }}' \
           'SPRING_DATASOURCE_USERNAME=${{ secrets.SPRING_DATASOURCE_USERNAME }}' \
           'SPRING_DATASOURCE_PASSWORD=${{ secrets.SPRING_DATASOURCE_PASSWORD }}' \
+          'MIXPANEL_API_KEY=${{ secrets.MIXPANEL_API_KEY }} \
           'demo=true'

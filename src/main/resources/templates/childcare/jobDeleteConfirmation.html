@@ -33,7 +33,7 @@
           </div>
           <div class="form-card__footer">
             <form method="post"
-                  th:action="'/' + ${flow} + '/' + ${subflow} + '/' + ${param.uuid} + '/delete'">
+                  th:action="'/flow' + '/' + ${flow} + '/' + ${subflow} + '/' + ${param.uuid} + '/delete'">
               <th:block th:replace="fragments/inputs/submitButton :: submitButton(
                   text=#{job-delete-confirmation.yes})"/>
             </form>

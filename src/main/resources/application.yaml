@@ -1,5 +1,7 @@
 form-flow:
   inputs: 'org.formflowstartertemplate.app.inputs.'
+  pdf:
+    path: null
   uploads:
     accepted-file-types: '.jpeg,.jpg,.png,.pdf,.bmp,.gif,.doc,.docx,.odt,.ods,.odp,.heic'
     thumbnail-width: '64'

@@ -7,11 +7,14 @@ form-flow:
     max-file-size: '1' # 1 MB file size limit
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;
-    username: sa
-    password: sa
+    url: jdbc:postgresql://localhost:5432/child-care-model-illinois-test
+    username: child-care-model-illinois-test
+    password: postgres
   thymeleaf:
     prefix: classpath:/templates/
+  flyway:
+    placeholders:
+      uuid_function: "gen_random_uuid"
   jpa:
     hibernate:
       ddl-auto: create-drop
