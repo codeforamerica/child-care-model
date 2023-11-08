@@ -1,11 +1,16 @@
 form-flow:
+  disabled-flows: ~
   uploads:
     accepted-file-types: '.jpeg,.jpg,.png,.pdf,.bmp,.gif,.doc,.docx,.odt,.ods,.odp,.heic'
     thumbnail-width: '54'
     thumbnail-height: '50'
     max-files: '5' # 5 files maximum
     max-file-size: '1' # 1 MB file size limit
+  address-validation:
+    disabled: true
 spring:
+  messages:
+    basename: messages, messages-form-flow
   datasource:
     url: jdbc:postgresql://localhost:5432/child-care-model-illinois-test
     username: child-care-model-illinois-test
@@ -13,10 +18,19 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
   flyway:
+    baselineOnMigrate: true
+    clean-on-validation-error: true
     placeholders:
       uuid_function: "gen_random_uuid"
+      user_file_doc_type_default_label: ${form-flow.uploads.default-doc-type-label:#{null}}
+    clean-disabled: false
   jpa:
     hibernate:
       ddl-auto: create-drop
   main:
     allow-circular-references: true
+  session:
+    store-type: jdbc
+    timeout: 72h
+    jdbc:
+      initialize-schema: always
