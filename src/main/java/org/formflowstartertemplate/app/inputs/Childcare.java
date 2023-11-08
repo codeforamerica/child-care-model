@@ -1,11 +1,11 @@
 package org.formflowstartertemplate.app.inputs;
 
 import java.util.ArrayList;
-import javax.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PositiveOrZero;
 
 import org.formflowstartertemplate.app.annotations.NullOrPositiveValidation;
 import org.springframework.web.multipart.MultipartFile;

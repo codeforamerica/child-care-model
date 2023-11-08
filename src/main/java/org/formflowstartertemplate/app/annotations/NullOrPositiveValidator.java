@@ -1,7 +1,7 @@
 package org.formflowstartertemplate.app.annotations;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class NullOrPositiveValidator implements ConstraintValidator<NullOrPositiveValidation, String> {
     @Override

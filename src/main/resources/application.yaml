@@ -1,7 +1,8 @@
 form-flow:
+  disabled-flows: ~
   inputs: 'org.formflowstartertemplate.app.inputs.'
   pdf:
-    path: null
+    path: ~
   uploads:
     accepted-file-types: '.jpeg,.jpg,.png,.pdf,.bmp,.gif,.doc,.docx,.odt,.ods,.odp,.heic'
     thumbnail-width: '64'
@@ -13,6 +14,12 @@ form-flow:
     s3_bucket_name: 'child-care-illinois'
     access_key: ${AWS_ACCESS_KEY}
     secret_key: ${AWS_SECRET_KEY}
+  address:
+    disabled: true
+    smarty:
+      smarty_auth_id: ${SMARTY_AUTH_ID}
+      smarty_auth_token: ${SMARTY_AUTH_TOKEN}
+      smarty_url: "https://us-street.api.smartystreets.com/street-address"
 spring:
   profiles:
     group:
@@ -41,12 +48,12 @@ spring:
     password:
   servlet:
     multipart:
-      max-file-size: 20MB
-      max-request-size: 20MB
+      max-file-size: ${form-flow.uploads.max-file-size}MB
+      max-request-size: ${form-flow.uploads.max-file-size}MB
 logging:
   level:
     root: INFO
     org.springframework.web: ERROR
 server:
   tomcat:
-    max-http-form-post-size: 20MB
+    max-http-form-post-size: ${form-flow.uploads.max-file-size}MB
