@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}">
-<head th:replace="fragments/head :: head(title=#{child-info.title})"></head>
+<head th:replace="~{fragments/head :: head(title=#{child-info.title})}"></head>
 <body>
 <div class="page-wrapper">
-  <div th:replace="fragments/toolbar :: toolbar"></div>
+  <div th:replace="~{fragments/toolbar :: toolbar}"></div>
   <section class="slab">
     <div class="grid">
-      <div th:replace="fragments/goBack :: goBackLink"></div>
+      <div th:replace="~{fragments/goBack :: goBackLink}"></div>
       <main id="content" role="main" class="form-card spacing-above-15">
         <p th:utext="#{general.step2}"></p>
         <div class="spacing-below-25 usa-card__heading">
@@ -16,14 +16,14 @@
         </div>
 
         <p th:text="#{child-info.description}"></p>
-          <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::empty-contents})">
+          <th:block th:replace="~{fragments/form :: form(action=${formAction}, content=~{::empty-contents})}">
             <th:block th:ref="empty-contents">
               <div class="form-card__content">
-                <th:block th:replace="fragments/inputs/yesOrNo :: yesOrNo(
+                <th:block th:replace="~{fragments/inputs/yesOrNo :: yesOrNo(
                   inputName='hasChildren',
                   ariaDescribe='yes no',
                   yesLabel=#{child-info.add-child-button-text},
-                  noLabel=#{child-info.skip-add-child-button-text})"/>
+                  noLabel=#{child-info.skip-add-child-button-text})}"/>
 
               </div>
               <div class="form-card__footer">
@@ -35,6 +35,6 @@
       </div>
   </section>
 </div>
-<th:block th:replace="fragments/footer :: footer" />
+<th:block th:replace="~{fragments/footer :: footer}" />
 </body>
 </html>

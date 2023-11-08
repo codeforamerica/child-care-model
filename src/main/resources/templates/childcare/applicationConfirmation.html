@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}">
-<head th:replace="fragments/head :: head(title='end of workflow')"></head>
+<head th:replace="~{fragments/head :: head(title='end of workflow')}"></head>
 <body>
 <div class="page-wrapper">
-  <div th:replace="fragments/toolbar :: toolbar"></div>
-  <div th:replace="fragments/goBack :: goBackLink"></div>
+  <div th:replace="~{fragments/toolbar :: toolbar}"></div>
+  <div th:replace="~{fragments/goBack :: goBackLink}"></div>
   <main id="content" role="main" class="form-card spacing-above-15">
     <div class="spacing-below-25 usa-card__heading">
       <h1 class="usa-card__heading" th:text="#{application-confirmation.header}">
@@ -27,6 +27,6 @@
 
   </main>
 </div>
-<th:block th:replace="fragments/footer :: footer" />
+<th:block th:replace="~{fragments/footer :: footer}" />
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}">
-<head th:replace="fragments/head :: head(title=#{household-list.title})"></head>
+<head th:replace="~{fragments/head :: head(title=#{household-list.title})}"></head>
 <body>
 <div class="page-wrapper">
-  <div th:replace="fragments/toolbar :: toolbar"></div>
-      <div th:replace="fragments/goBack :: goBackLink"></div>
+  <div th:replace="~{fragments/toolbar :: toolbar}"></div>
+      <div th:replace="~{fragments/goBack :: goBackLink}"></div>
       <main id="content" role="main" class="form-card spacing-above-15">
         <p th:utext="#{general.step2}"></p>
         <div class="spacing-below-25 usa-card__heading">
@@ -59,10 +59,10 @@
         </div>
         <div class="form-card__footer">
           <th:block
-              th:replace="'fragments/continueButton' :: continue(text=#{review-children.finish-children})"/>
+              th:replace="~{fragments/continueButton :: continue(text=#{review-children.finish-children})}"/>
         </div>
       </main>
     </div>
-<th:block th:replace="fragments/footer :: footer"/>
+<th:block th:replace="~{fragments/footer :: footer}"/>
 </body>
 </html>

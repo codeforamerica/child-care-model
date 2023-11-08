@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}">
-<head th:replace="fragments/head :: head(title=#{work-and-income.title})"></head>
+<head th:replace="~{fragments/head :: head(title=#{work-and-income.title})}"></head>
 <body>
 <div class="page-wrapper">
-  <div th:replace="fragments/toolbar :: toolbar"></div>
+  <div th:replace="~{fragments/toolbar :: toolbar}"></div>
   <section class="slab">
     <div class="grid">
-      <div th:replace="fragments/goBack :: goBackLink"></div>
+      <div th:replace="~{fragments/goBack :: goBackLink}"></div>
       <main id="content" role="main" class="form-card spacing-above-35">
         <p th:utext="#{general.step3}"></p>
         <div class="spacing-below-25 usa-card__heading">
           <h1 class="usa-card__heading" id="heading" th:text="#{work-and-income.searching-for-employment}">
           </h1>
         </div>
-        <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::workAndIncome})">
+        <th:block th:replace="~{fragments/form :: form(action=${formAction}, content=~{::workAndIncome})}">
           <th:block th:ref="workAndIncome">
             <div class="form-card__content" th:onchange="toggleAskJob()">
-                <th:block th:replace="'fragments/inputs/radioFieldset' ::
+                <th:block th:replace="~{fragments/inputs/radioFieldset ::
                                 radioFieldset(inputName='searchingForEmployment',
                                 ariaLabel='heading',
                                 fieldsetHelpText=#{work-and-income.searching-for-employment.help},
-                                content=~{::searchingForEmploymentOptions})">
+                                content=~{::searchingForEmploymentOptions})}">
                   <th:block th:ref="searchingForEmploymentOptions">
                     <!-- Copy the below input if you want to add more -->
                     <th:block
-                        th:replace="'fragments/inputs/radio' :: radio(inputName='searchingForEmployment',value='Yes', label=#{general.option-yes})"/>
+                        th:replace="~{fragments/inputs/radio :: radio(inputName='searchingForEmployment',value='Yes', label=#{general.option-yes})}"/>
                     <th:block
-                        th:replace="'fragments/inputs/radio' :: radio(inputName='searchingForEmployment',value='No', label=#{general.option-no})"/>
+                        th:replace="~{fragments/inputs/radio :: radio(inputName='searchingForEmployment',value='No', label=#{general.option-no})}"/>
                   </th:block>
                 </th:block>
             </div>
             <div class="form-card__footer">
-              <th:block th:replace="fragments/inputs/submitButton :: submitButton(
-                    text=#{basic-info.next-button-text})" />
-
+              <th:block th:replace="~{fragments/inputs/submitButton :: submitButton(
+                    text=#{basic-info.next-button-text})}" />
             </div>
           </th:block>
         </th:block>
@@ -41,6 +40,6 @@
     </div>
   </section>
 </div>
-<th:block th:replace="fragments/footer :: footer" />
+<th:block th:replace="~{fragments/footer :: footer}" />
 </body>
 </html>

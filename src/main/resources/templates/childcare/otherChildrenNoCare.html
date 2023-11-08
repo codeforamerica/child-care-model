@@ -2,11 +2,11 @@
 <html th:lang="${#locale.language}">
 <body onload="toggleAskNumberOfChildren()">
 <script type="text/javascript" th:src="@{/assets/js/actions.js}"></script>
-<head th:replace="fragments/head :: head(title=#{children-no-care.title})"></head>
+<head th:replace="~{fragments/head :: head(title=#{children-no-care.title})}"></head>
 <body>
 <div class="page-wrapper">
-  <div th:replace="fragments/toolbar :: toolbar"></div>
-  <div th:replace="fragments/goBack :: goBackLink"></div>
+  <div th:replace="~{fragments/toolbar :: toolbar}"></div>
+  <div th:replace="~{fragments/goBack :: goBackLink}"></div>
   <main id="content" role="main" class="form-card spacing-above-15">
     <p th:utext="#{general.step2}"></p>
     <div class="spacing-below-25 usa-card__heading">
@@ -16,40 +16,39 @@
     </div>
 
     <p th:text="#{children-no-care.description}"></p>
-    <th:block th:replace="'fragments/form' :: form(action=${formAction}, content=~{::empty-contents})">
+    <th:block th:replace="~{fragments/form :: form(action=${formAction}, content=~{::empty-contents})}">
       <th:block th:ref="empty-contents">
         <div class="form-card__content" th:onchange="toggleAskNumberOfChildren()">
-          <th:block th:replace="'fragments/inputs/radioFieldset' ::
+          <th:block th:replace="~{fragments/inputs/radioFieldset ::
                         radioFieldset(inputName='childrenNotNeedingCare',
                         label='',
                         ariaLabel='children not needing care',
-                        content=~{::childrenNotNeedingCareOptions})">
+                        content=~{::childrenNotNeedingCareOptions})}">
                         <th:block th:ref="childrenNotNeedingCareOptions">
                           <!-- Copy the below input if you want to add more -->
                           <th:block
-                              th:replace="'fragments/inputs/radio' :: radio(inputName='childrenNotNeedingCare',value='Yes', label=#{general.option-yes})"
+                              th:replace="~{fragments/inputs/radio :: radio(inputName='childrenNotNeedingCare',value='Yes', label=#{general.option-yes})}"
                               />
                           <th:block
-                              th:replace="'fragments/inputs/radio' :: radio(inputName='childrenNotNeedingCare',value='No', label=#{general.option-no})"
+                              th:replace="~{fragments/inputs/radio :: radio(inputName='childrenNotNeedingCare',value='No', label=#{general.option-no})}"
                               />
                         </th:block>
                       </th:block>
           <div id="children-not-needing-care" style="display: none;">
-            <th:block th:replace="'fragments/inputs/number' ::
+            <th:block th:replace="~{fragments/inputs/number ::
               number(inputName='numChildrenNotNeedingCare',
-              label=#{children-no-care.count})" />
+              label=#{children-no-care.count})}" />
           </div>
 
         </div>
         <div class="form-card__footer">
-          <th:block th:replace="fragments/inputs/submitButton :: submitButton(
-                    text=#{basic-info.next-button-text})" />
-
+          <th:block th:replace="~{fragments/inputs/submitButton :: submitButton(
+                    text=#{basic-info.next-button-text})}" />
         </div>
       </th:block>
     </th:block>
   </main>
 </div>
-<th:block th:replace="fragments/footer :: footer" />
+<th:block th:replace="~{fragments/footer :: footer}" />
 </body>
 </html>
